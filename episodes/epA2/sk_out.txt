@@ -1,0 +1,66 @@
+--- loan | criterion=gini | leaves=4 depth=3 acc=1.00
+|--- Marital_Married <= 0.50
+|   |--- HomeOwner_No <= 0.50
+|   |   |--- class: No
+|   |--- HomeOwner_No >  0.50
+|   |   |--- Income <= 77.50
+|   |   |   |--- class: No
+|   |   |--- Income >  77.50
+|   |   |   |--- class: Yes
+|--- Marital_Married >  0.50
+|   |--- class: No
+
+--- loan | criterion=entropy | leaves=4 depth=3 acc=1.00
+|--- Marital_Married <= 0.50
+|   |--- HomeOwner_No <= 0.50
+|   |   |--- class: No
+|   |--- HomeOwner_No >  0.50
+|   |   |--- Income <= 77.50
+|   |   |   |--- class: No
+|   |   |--- Income >  77.50
+|   |   |   |--- class: Yes
+|--- Marital_Married >  0.50
+|   |--- class: No
+
+--- customer | criterion=gini | leaves=7 depth=5 acc=0.95
+|--- CarType_Sports <= 0.50
+|   |--- ShirtSize_Medium <= 0.50
+|   |   |--- ShirtSize_Extra Large <= 0.50
+|   |   |   |--- CarType_Family <= 0.50
+|   |   |   |   |--- ShirtSize_Small <= 0.50
+|   |   |   |   |   |--- class: C0
+|   |   |   |   |--- ShirtSize_Small >  0.50
+|   |   |   |   |   |--- class: C1
+|   |   |   |--- CarType_Family >  0.50
+|   |   |   |   |--- ShirtSize_Small <= 0.50
+|   |   |   |   |   |--- class: C1
+|   |   |   |   |--- ShirtSize_Small >  0.50
+|   |   |   |   |   |--- class: C0
+|   |   |--- ShirtSize_Extra Large >  0.50
+|   |   |   |--- class: C1
+|   |--- ShirtSize_Medium >  0.50
+|   |   |--- class: C1
+|--- CarType_Sports >  0.50
+|   |--- class: C0
+
+--- customer | criterion=entropy | leaves=7 depth=5 acc=0.95
+|--- CarType_Sports <= 0.50
+|   |--- ShirtSize_Medium <= 0.50
+|   |   |--- ShirtSize_Extra Large <= 0.50
+|   |   |   |--- CarType_Family <= 0.50
+|   |   |   |   |--- ShirtSize_Small <= 0.50
+|   |   |   |   |   |--- class: C0
+|   |   |   |   |--- ShirtSize_Small >  0.50
+|   |   |   |   |   |--- class: C1
+|   |   |   |--- CarType_Family >  0.50
+|   |   |   |   |--- ShirtSize_Small <= 0.50
+|   |   |   |   |   |--- class: C1
+|   |   |   |   |--- ShirtSize_Small >  0.50
+|   |   |   |   |   |--- class: C0
+|   |   |--- ShirtSize_Extra Large >  0.50
+|   |   |   |--- class: C1
+|   |--- ShirtSize_Medium >  0.50
+|   |   |--- class: C1
+|--- CarType_Sports >  0.50
+|   |--- class: C0
+

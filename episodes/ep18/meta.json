@@ -1,0 +1,19 @@
+{
+ "num": 18,
+ "title": "交叉驗證：Holdout、K-fold、Nested CV",
+ "head": "",
+ "summary": "只切一次驗證集，結果可能看運氣。這一集用「模擬考輪流當考官」打比方，介紹 Holdout、K-fold、重複與分層 CV，實際用 3-fold CV 比較 max_depth＝2、5、20，再說明為什麼要用 Nested CV、Public／Private test，以及交叉驗證下怎麼畫 ROC，最後把作業三指定的兩種流程畫清楚。",
+ "tags": [
+  "機器學習",
+  "交叉驗證",
+  "cross-validation",
+  "K-fold",
+  "Holdout",
+  "Nested CV",
+  "超參數",
+  "機器學習從零開始",
+  "作業三"
+ ],
+ "next": "EP19 剪枝",
+ "accent": "A"
+}

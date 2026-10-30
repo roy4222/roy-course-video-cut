@@ -1,0 +1,48 @@
+{
+ "updated": "2026-10-30T16:35+08:00",
+ "research": "done: A1=PART03 p59, A2=PART03 p136 (customer table only; 'two datasets' -> loan data assumed), docx ML_Assignment1_Hunts, EP15 build.py",
+ "A1": {
+  "script": "done",
+  "build": "/workspace/video_style/epA1/build.py",
+  "tts": "done",
+  "render": "done",
+  "qc": "1080p30, -14.0 LUFS master, sync offsets <=0.1s, layout 0",
+  "duration_s": 1033.6,
+  "deliver": "/workspace/deliver/A1 (mp4,srt,script.md,youtube.json post-edited)",
+  "drive": {
+   "folder": "1hMQEZURA4izh2ZwSsluUbg7er6hcPqAB",
+   "mp4": "1TVZiVyJMPKyYo0cWlDA31pgj9FTNEZa2",
+   "srt": "1wTEZWn_AcbQER0kZnnyA-ILjilKgEDRm"
+  }
+ },
+ "A2_1": {
+  "build": "/workspace/video_style/epA2/p1/build.py",
+  "tts": "done",
+  "render": "done (rerun after NVENC session clash)",
+  "qc": "1080p30, -13.9 LUFS, sync offsets <=0.3s, layout 0",
+  "duration_s": 792.0,
+  "deliver": "/workspace/deliver/A2_1",
+  "drive": {
+   "folder": "18v557vzVpY-BnOlkkzQNFzBwxQo-aeGE",
+   "mp4": "1y6vqgBgFwxZ4BugGHqjFjAjovJn65UBk",
+   "srt": "1Eq40vYqFpYAeh_2eu7JHTpHIVCRwrViY"
+  }
+ },
+ "A2_2": {
+  "build": "/workspace/video_style/epA2/p2/build.py",
+  "desktop": "D:\\ml-video-kit\\episodes\\epA2_2",
+  "tts": "done",
+  "render": "done",
+  "next": "none; report to Boss, YouTube upload awaits approval",
+  "qc": "1080p30, -13.8 LUFS, sync offsets <=0.36s, layout 0",
+  "duration_s": 767.5,
+  "deliver": "/workspace/deliver/A2_2",
+  "drive": {
+   "folder": "18v557vzVpY-BnOlkkzQNFzBwxQo-aeGE",
+   "mp4": "18CDwvN65I2qhe0jxthwlKDQfN8vQPrEV",
+   "srt": "1wS5_q-s6hG_hmURRHp-q0k4M8Poq_2TU"
+  }
+ },
+ "notes": "Only one NVENC render at a time (3060 Ti session limit). Never print .env. Don't touch EP12/14/16/17/19.",
+ "status": "ALL DONE"
+}

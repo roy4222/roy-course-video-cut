@@ -1,0 +1,5317 @@
+{
+"cust_gini": [
+{
+"path": "root",
+"counts": [
+10,
+10
+],
+"ids": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"depth": 0,
+"split": {
+"attr": "Car Type",
+"split": "multi",
+"names": [
+"Family",
+"Sports",
+"Luxury"
+],
+"counts": [
+[
+1,
+3
+],
+[
+8,
+0
+],
+[
+1,
+7
+]
+],
+"ids": [
+[
+1,
+11,
+12,
+13
+],
+[
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 0.5,
+"weighted": 0.1625,
+"gain": 0.3375,
+"splitinfo": 1.5219,
+"gr": 0.2218,
+"score": 0.33749999999999997
+},
+"ties": [
+"Car Type"
+],
+"cands": [
+{
+"attr": "Gender",
+"split": "multi",
+"names": [
+"M",
+"F"
+],
+"counts": [
+[
+6,
+4
+],
+[
+4,
+6
+]
+],
+"ids": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+11,
+12,
+13,
+14
+],
+[
+7,
+8,
+9,
+10,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 0.5,
+"weighted": 0.48,
+"gain": 0.02,
+"splitinfo": 1.0,
+"gr": 0.02,
+"score": 0.020000000000000018
+},
+{
+"attr": "Car Type",
+"split": "multi",
+"names": [
+"Family",
+"Sports",
+"Luxury"
+],
+"counts": [
+[
+1,
+3
+],
+[
+8,
+0
+],
+[
+1,
+7
+]
+],
+"ids": [
+[
+1,
+11,
+12,
+13
+],
+[
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 0.5,
+"weighted": 0.1625,
+"gain": 0.3375,
+"splitinfo": 1.5219,
+"gr": 0.2218,
+"score": 0.33749999999999997
+},
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Medium",
+"Large",
+"Extra Large"
+],
+"counts": [
+[
+3,
+2
+],
+[
+3,
+4
+],
+[
+2,
+2
+],
+[
+2,
+2
+]
+],
+"ids": [
+[
+1,
+7,
+8,
+15,
+16
+],
+[
+2,
+3,
+9,
+13,
+17,
+18,
+19
+],
+[
+4,
+10,
+11,
+20
+],
+[
+5,
+6,
+12,
+14
+]
+],
+"parent": 0.5,
+"weighted": 0.4914,
+"gain": 0.0086,
+"splitinfo": 1.9589,
+"gr": 0.0044,
+"score": 0.008571428571428563
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Family",
+"counts": [
+1,
+3
+],
+"ids": [
+1,
+11,
+12,
+13
+],
+"depth": 1,
+"split": {
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Large",
+"Extra Large",
+"Medium"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+1
+],
+[
+0,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+1
+],
+[
+11
+],
+[
+12
+],
+[
+13
+]
+],
+"parent": 0.375,
+"weighted": 0.0,
+"gain": 0.375,
+"splitinfo": 2.0,
+"gr": 0.1875,
+"score": 0.375
+},
+"ties": [
+"Shirt Size"
+],
+"cands": [
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Large",
+"Extra Large",
+"Medium"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+1
+],
+[
+0,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+1
+],
+[
+11
+],
+[
+12
+],
+[
+13
+]
+],
+"parent": 0.375,
+"weighted": 0.0,
+"gain": 0.375,
+"splitinfo": 2.0,
+"gr": 0.1875,
+"score": 0.375
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Small",
+"counts": [
+1,
+0
+],
+"ids": [
+1
+],
+"depth": 2,
+"leaf": "C0",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Large",
+"counts": [
+0,
+1
+],
+"ids": [
+11
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Extra Large",
+"counts": [
+0,
+1
+],
+"ids": [
+12
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Medium",
+"counts": [
+0,
+1
+],
+"ids": [
+13
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Sports",
+"counts": [
+8,
+0
+],
+"ids": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"depth": 1,
+"leaf": "C0",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury",
+"counts": [
+1,
+7
+],
+"ids": [
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"depth": 1,
+"split": {
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Large",
+"Extra Large",
+"Small",
+"Medium"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+10,
+20
+],
+[
+14
+],
+[
+15,
+16
+],
+[
+17,
+18,
+19
+]
+],
+"parent": 0.2188,
+"weighted": 0.125,
+"gain": 0.0938,
+"splitinfo": 1.9056,
+"gr": 0.0492,
+"score": 0.09375
+},
+"ties": [
+"Shirt Size"
+],
+"cands": [
+{
+"attr": "Gender",
+"split": "multi",
+"names": [
+"F",
+"M"
+],
+"counts": [
+[
+1,
+6
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+10,
+15,
+16,
+17,
+18,
+19,
+20
+],
+[
+14
+]
+],
+"parent": 0.2188,
+"weighted": 0.2143,
+"gain": 0.0045,
+"splitinfo": 0.5436,
+"gr": 0.0082,
+"score": 0.004464285714285671
+},
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Large",
+"Extra Large",
+"Small",
+"Medium"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+10,
+20
+],
+[
+14
+],
+[
+15,
+16
+],
+[
+17,
+18,
+19
+]
+],
+"parent": 0.2188,
+"weighted": 0.125,
+"gain": 0.0938,
+"splitinfo": 1.9056,
+"gr": 0.0492,
+"score": 0.09375
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Large",
+"counts": [
+1,
+1
+],
+"ids": [
+10,
+20
+],
+"depth": 2,
+"leaf": "tie",
+"note": "identical attrs",
+"cands": []
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Extra Large",
+"counts": [
+0,
+1
+],
+"ids": [
+14
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Small",
+"counts": [
+0,
+2
+],
+"ids": [
+15,
+16
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Medium",
+"counts": [
+0,
+3
+],
+"ids": [
+17,
+18,
+19
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+}
+],
+"cust_ig": [
+{
+"path": "root",
+"counts": [
+10,
+10
+],
+"ids": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"depth": 0,
+"split": {
+"attr": "Car Type",
+"split": "multi",
+"names": [
+"Family",
+"Sports",
+"Luxury"
+],
+"counts": [
+[
+1,
+3
+],
+[
+8,
+0
+],
+[
+1,
+7
+]
+],
+"ids": [
+[
+1,
+11,
+12,
+13
+],
+[
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 1.0,
+"weighted": 0.3797,
+"gain": 0.6203,
+"splitinfo": 1.5219,
+"gr": 0.4076,
+"score": 0.6203185978283349
+},
+"ties": [
+"Car Type"
+],
+"cands": [
+{
+"attr": "Gender",
+"split": "multi",
+"names": [
+"M",
+"F"
+],
+"counts": [
+[
+6,
+4
+],
+[
+4,
+6
+]
+],
+"ids": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+11,
+12,
+13,
+14
+],
+[
+7,
+8,
+9,
+10,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 1.0,
+"weighted": 0.971,
+"gain": 0.029,
+"splitinfo": 1.0,
+"gr": 0.029,
+"score": 0.02904940554533142
+},
+{
+"attr": "Car Type",
+"split": "multi",
+"names": [
+"Family",
+"Sports",
+"Luxury"
+],
+"counts": [
+[
+1,
+3
+],
+[
+8,
+0
+],
+[
+1,
+7
+]
+],
+"ids": [
+[
+1,
+11,
+12,
+13
+],
+[
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 1.0,
+"weighted": 0.3797,
+"gain": 0.6203,
+"splitinfo": 1.5219,
+"gr": 0.4076,
+"score": 0.6203185978283349
+},
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Medium",
+"Large",
+"Extra Large"
+],
+"counts": [
+[
+3,
+2
+],
+[
+3,
+4
+],
+[
+2,
+2
+],
+[
+2,
+2
+]
+],
+"ids": [
+[
+1,
+7,
+8,
+15,
+16
+],
+[
+2,
+3,
+9,
+13,
+17,
+18,
+19
+],
+[
+4,
+10,
+11,
+20
+],
+[
+5,
+6,
+12,
+14
+]
+],
+"parent": 1.0,
+"weighted": 0.9876,
+"gain": 0.0124,
+"splitinfo": 1.9589,
+"gr": 0.0063,
+"score": 0.012432503774344794
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Family",
+"counts": [
+1,
+3
+],
+"ids": [
+1,
+11,
+12,
+13
+],
+"depth": 1,
+"split": {
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Large",
+"Extra Large",
+"Medium"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+1
+],
+[
+0,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+1
+],
+[
+11
+],
+[
+12
+],
+[
+13
+]
+],
+"parent": 0.8113,
+"weighted": 0.0,
+"gain": 0.8113,
+"splitinfo": 2.0,
+"gr": 0.4056,
+"score": 0.8112781244591328
+},
+"ties": [
+"Shirt Size"
+],
+"cands": [
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Large",
+"Extra Large",
+"Medium"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+1
+],
+[
+0,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+1
+],
+[
+11
+],
+[
+12
+],
+[
+13
+]
+],
+"parent": 0.8113,
+"weighted": 0.0,
+"gain": 0.8113,
+"splitinfo": 2.0,
+"gr": 0.4056,
+"score": 0.8112781244591328
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Small",
+"counts": [
+1,
+0
+],
+"ids": [
+1
+],
+"depth": 2,
+"leaf": "C0",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Large",
+"counts": [
+0,
+1
+],
+"ids": [
+11
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Extra Large",
+"counts": [
+0,
+1
+],
+"ids": [
+12
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Medium",
+"counts": [
+0,
+1
+],
+"ids": [
+13
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Sports",
+"counts": [
+8,
+0
+],
+"ids": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"depth": 1,
+"leaf": "C0",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury",
+"counts": [
+1,
+7
+],
+"ids": [
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"depth": 1,
+"split": {
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Large",
+"Extra Large",
+"Small",
+"Medium"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+10,
+20
+],
+[
+14
+],
+[
+15,
+16
+],
+[
+17,
+18,
+19
+]
+],
+"parent": 0.5436,
+"weighted": 0.25,
+"gain": 0.2936,
+"splitinfo": 1.9056,
+"gr": 0.1541,
+"score": 0.2935644431995964
+},
+"ties": [
+"Shirt Size"
+],
+"cands": [
+{
+"attr": "Gender",
+"split": "multi",
+"names": [
+"F",
+"M"
+],
+"counts": [
+[
+1,
+6
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+10,
+15,
+16,
+17,
+18,
+19,
+20
+],
+[
+14
+]
+],
+"parent": 0.5436,
+"weighted": 0.5177,
+"gain": 0.0259,
+"splitinfo": 0.5436,
+"gr": 0.0476,
+"score": 0.025850761940059863
+},
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Large",
+"Extra Large",
+"Small",
+"Medium"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+10,
+20
+],
+[
+14
+],
+[
+15,
+16
+],
+[
+17,
+18,
+19
+]
+],
+"parent": 0.5436,
+"weighted": 0.25,
+"gain": 0.2936,
+"splitinfo": 1.9056,
+"gr": 0.1541,
+"score": 0.2935644431995964
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Large",
+"counts": [
+1,
+1
+],
+"ids": [
+10,
+20
+],
+"depth": 2,
+"leaf": "tie",
+"note": "identical attrs",
+"cands": []
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Extra Large",
+"counts": [
+0,
+1
+],
+"ids": [
+14
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Small",
+"counts": [
+0,
+2
+],
+"ids": [
+15,
+16
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Medium",
+"counts": [
+0,
+3
+],
+"ids": [
+17,
+18,
+19
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+}
+],
+"cust_gr": [
+{
+"path": "root",
+"counts": [
+10,
+10
+],
+"ids": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"depth": 0,
+"split": {
+"attr": "Car Type",
+"split": "multi",
+"names": [
+"Family",
+"Sports",
+"Luxury"
+],
+"counts": [
+[
+1,
+3
+],
+[
+8,
+0
+],
+[
+1,
+7
+]
+],
+"ids": [
+[
+1,
+11,
+12,
+13
+],
+[
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 1.0,
+"weighted": 0.3797,
+"gain": 0.6203,
+"splitinfo": 1.5219,
+"gr": 0.4076,
+"score": 0.40758732289139105
+},
+"ties": [
+"Car Type"
+],
+"cands": [
+{
+"attr": "Gender",
+"split": "multi",
+"names": [
+"M",
+"F"
+],
+"counts": [
+[
+6,
+4
+],
+[
+4,
+6
+]
+],
+"ids": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+11,
+12,
+13,
+14
+],
+[
+7,
+8,
+9,
+10,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 1.0,
+"weighted": 0.971,
+"gain": 0.029,
+"splitinfo": 1.0,
+"gr": 0.029,
+"score": 0.02904940554533142
+},
+{
+"attr": "Car Type",
+"split": "multi",
+"names": [
+"Family",
+"Sports",
+"Luxury"
+],
+"counts": [
+[
+1,
+3
+],
+[
+8,
+0
+],
+[
+1,
+7
+]
+],
+"ids": [
+[
+1,
+11,
+12,
+13
+],
+[
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+]
+],
+"parent": 1.0,
+"weighted": 0.3797,
+"gain": 0.6203,
+"splitinfo": 1.5219,
+"gr": 0.4076,
+"score": 0.40758732289139105
+},
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Medium",
+"Large",
+"Extra Large"
+],
+"counts": [
+[
+3,
+2
+],
+[
+3,
+4
+],
+[
+2,
+2
+],
+[
+2,
+2
+]
+],
+"ids": [
+[
+1,
+7,
+8,
+15,
+16
+],
+[
+2,
+3,
+9,
+13,
+17,
+18,
+19
+],
+[
+4,
+10,
+11,
+20
+],
+[
+5,
+6,
+12,
+14
+]
+],
+"parent": 1.0,
+"weighted": 0.9876,
+"gain": 0.0124,
+"splitinfo": 1.9589,
+"gr": 0.0063,
+"score": 0.006346767290678934
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Family",
+"counts": [
+1,
+3
+],
+"ids": [
+1,
+11,
+12,
+13
+],
+"depth": 1,
+"split": {
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Large",
+"Extra Large",
+"Medium"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+1
+],
+[
+0,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+1
+],
+[
+11
+],
+[
+12
+],
+[
+13
+]
+],
+"parent": 0.8113,
+"weighted": 0.0,
+"gain": 0.8113,
+"splitinfo": 2.0,
+"gr": 0.4056,
+"score": 0.4056390622295664
+},
+"ties": [
+"Shirt Size"
+],
+"cands": [
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Small",
+"Large",
+"Extra Large",
+"Medium"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+1
+],
+[
+0,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+1
+],
+[
+11
+],
+[
+12
+],
+[
+13
+]
+],
+"parent": 0.8113,
+"weighted": 0.0,
+"gain": 0.8113,
+"splitinfo": 2.0,
+"gr": 0.4056,
+"score": 0.4056390622295664
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Small",
+"counts": [
+1,
+0
+],
+"ids": [
+1
+],
+"depth": 2,
+"leaf": "C0",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Large",
+"counts": [
+0,
+1
+],
+"ids": [
+11
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Extra Large",
+"counts": [
+0,
+1
+],
+"ids": [
+12
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Family > Shirt Size=Medium",
+"counts": [
+0,
+1
+],
+"ids": [
+13
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Sports",
+"counts": [
+8,
+0
+],
+"ids": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"depth": 1,
+"leaf": "C0",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury",
+"counts": [
+1,
+7
+],
+"ids": [
+10,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"depth": 1,
+"split": {
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Large",
+"Extra Large",
+"Small",
+"Medium"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+10,
+20
+],
+[
+14
+],
+[
+15,
+16
+],
+[
+17,
+18,
+19
+]
+],
+"parent": 0.5436,
+"weighted": 0.25,
+"gain": 0.2936,
+"splitinfo": 1.9056,
+"gr": 0.1541,
+"score": 0.15405039129295073
+},
+"ties": [
+"Shirt Size"
+],
+"cands": [
+{
+"attr": "Gender",
+"split": "multi",
+"names": [
+"F",
+"M"
+],
+"counts": [
+[
+1,
+6
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+10,
+15,
+16,
+17,
+18,
+19,
+20
+],
+[
+14
+]
+],
+"parent": 0.5436,
+"weighted": 0.5177,
+"gain": 0.0259,
+"splitinfo": 0.5436,
+"gr": 0.0476,
+"score": 0.04755786045881497
+},
+{
+"attr": "Shirt Size",
+"split": "multi",
+"names": [
+"Large",
+"Extra Large",
+"Small",
+"Medium"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+10,
+20
+],
+[
+14
+],
+[
+15,
+16
+],
+[
+17,
+18,
+19
+]
+],
+"parent": 0.5436,
+"weighted": 0.25,
+"gain": 0.2936,
+"splitinfo": 1.9056,
+"gr": 0.1541,
+"score": 0.15405039129295073
+}
+],
+"allc": {}
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Large",
+"counts": [
+1,
+1
+],
+"ids": [
+10,
+20
+],
+"depth": 2,
+"leaf": "tie",
+"note": "identical attrs",
+"cands": []
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Extra Large",
+"counts": [
+0,
+1
+],
+"ids": [
+14
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Small",
+"counts": [
+0,
+2
+],
+"ids": [
+15,
+16
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+},
+{
+"path": "root > Car Type=Luxury > Shirt Size=Medium",
+"counts": [
+0,
+3
+],
+"ids": [
+17,
+18,
+19
+],
+"depth": 2,
+"leaf": "C1",
+"cands": null
+}
+],
+"loan_gini": [
+{
+"path": "root",
+"counts": [
+7,
+3
+],
+"ids": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"depth": 0,
+"split": {
+"attr": "Marital Status",
+"split": "multi",
+"names": [
+"Single",
+"Married",
+"Divorced"
+],
+"counts": [
+[
+2,
+2
+],
+[
+4,
+0
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+1,
+3,
+8,
+10
+],
+[
+2,
+4,
+6,
+9
+],
+[
+5,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.3,
+"gain": 0.12,
+"splitinfo": 1.5219,
+"gr": 0.0788,
+"score": 0.12
+},
+"ties": [
+"Marital Status",
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+3,
+0
+],
+[
+4,
+3
+]
+],
+"ids": [
+[
+1,
+4,
+7
+],
+[
+2,
+3,
+5,
+6,
+8,
+9,
+10
+]
+],
+"parent": 0.42,
+"weighted": 0.3429,
+"gain": 0.0771,
+"splitinfo": 0.8813,
+"gr": 0.0875,
+"score": 0.07714285714285712
+},
+{
+"attr": "Marital Status",
+"split": "multi",
+"names": [
+"Single",
+"Married",
+"Divorced"
+],
+"counts": [
+[
+2,
+2
+],
+[
+4,
+0
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+1,
+3,
+8,
+10
+],
+[
+2,
+4,
+6,
+9
+],
+[
+5,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.3,
+"gain": 0.12,
+"splitinfo": 1.5219,
+"gr": 0.0788,
+"score": 0.12
+},
+{
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.3,
+"gain": 0.12,
+"splitinfo": 0.971,
+"gr": 0.1236,
+"score": 0.12000000000000005
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 65",
+"names": [
+"<=65",
+">65"
+],
+"counts": [
+[
+1,
+0
+],
+[
+6,
+3
+]
+],
+"ids": [
+[
+6
+],
+[
+1,
+2,
+3,
+4,
+5,
+7,
+8,
+9,
+10
+]
+],
+"parent": 0.42,
+"weighted": 0.4,
+"gain": 0.02,
+"splitinfo": 0.469,
+"gr": 0.0426,
+"score": 0.020000000000000073
+},
+{
+"attr": "Annual Income",
+"split": "<= 72.5",
+"names": [
+"<=72.5",
+">72.5"
+],
+"counts": [
+[
+2,
+0
+],
+[
+5,
+3
+]
+],
+"ids": [
+[
+3,
+6
+],
+[
+1,
+2,
+4,
+5,
+7,
+8,
+9,
+10
+]
+],
+"parent": 0.42,
+"weighted": 0.375,
+"gain": 0.045,
+"splitinfo": 0.7219,
+"gr": 0.0623,
+"score": 0.04500000000000004
+},
+{
+"attr": "Annual Income",
+"split": "<= 80",
+"names": [
+"<=80",
+">80"
+],
+"counts": [
+[
+3,
+0
+],
+[
+4,
+3
+]
+],
+"ids": [
+[
+3,
+6,
+9
+],
+[
+1,
+2,
+4,
+5,
+7,
+8,
+10
+]
+],
+"parent": 0.42,
+"weighted": 0.3429,
+"gain": 0.0771,
+"splitinfo": 0.8813,
+"gr": 0.0875,
+"score": 0.07714285714285712
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+3,
+1
+],
+[
+4,
+2
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9
+],
+[
+1,
+2,
+4,
+5,
+7,
+10
+]
+],
+"parent": 0.42,
+"weighted": 0.4167,
+"gain": 0.0033,
+"splitinfo": 0.971,
+"gr": 0.0034,
+"score": 0.003333333333333355
+},
+{
+"attr": "Annual Income",
+"split": "<= 92.5",
+"names": [
+"<=92.5",
+">92.5"
+],
+"counts": [
+[
+3,
+2
+],
+[
+4,
+1
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+5,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.4,
+"gain": 0.02,
+"splitinfo": 1.0,
+"gr": 0.02,
+"score": 0.02000000000000013
+},
+{
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.3,
+"gain": 0.12,
+"splitinfo": 0.971,
+"gr": 0.1236,
+"score": 0.12000000000000005
+},
+{
+"attr": "Annual Income",
+"split": "<= 110",
+"names": [
+"<=110",
+">110"
+],
+"counts": [
+[
+4,
+3
+],
+[
+3,
+0
+]
+],
+"ids": [
+[
+2,
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+4,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.3429,
+"gain": 0.0771,
+"splitinfo": 0.8813,
+"gr": 0.0875,
+"score": 0.07714285714285712
+},
+{
+"attr": "Annual Income",
+"split": "<= 122.5",
+"names": [
+"<=122.5",
+">122.5"
+],
+"counts": [
+[
+5,
+3
+],
+[
+2,
+0
+]
+],
+"ids": [
+[
+2,
+3,
+4,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.375,
+"gain": 0.045,
+"splitinfo": 0.7219,
+"gr": 0.0623,
+"score": 0.04500000000000004
+},
+{
+"attr": "Annual Income",
+"split": "<= 172.5",
+"names": [
+"<=172.5",
+">172.5"
+],
+"counts": [
+[
+6,
+3
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+8,
+9,
+10
+],
+[
+7
+]
+],
+"parent": 0.42,
+"weighted": 0.4,
+"gain": 0.02,
+"splitinfo": 0.469,
+"gr": 0.0426,
+"score": 0.020000000000000073
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Single",
+"counts": [
+2,
+2
+],
+"ids": [
+1,
+3,
+8,
+10
+],
+"depth": 1,
+"split": {
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+1
+],
+[
+3,
+8,
+10
+]
+],
+"parent": 0.5,
+"weighted": 0.3333,
+"gain": 0.1667,
+"splitinfo": 0.8113,
+"gr": 0.2054,
+"score": 0.16666666666666669
+},
+"ties": [
+"Home Owner",
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+1
+],
+[
+3,
+8,
+10
+]
+],
+"parent": 0.5,
+"weighted": 0.3333,
+"gain": 0.1667,
+"splitinfo": 0.8113,
+"gr": 0.2054,
+"score": 0.16666666666666669
+},
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+1,
+8,
+10
+]
+],
+"parent": 0.5,
+"weighted": 0.3333,
+"gain": 0.1667,
+"splitinfo": 0.8113,
+"gr": 0.2054,
+"score": 0.16666666666666669
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+1,
+8,
+10
+]
+],
+"parent": 0.5,
+"weighted": 0.3333,
+"gain": 0.1667,
+"splitinfo": 0.8113,
+"gr": 0.2054,
+"score": 0.16666666666666669
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+1,
+1
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+3,
+8
+],
+[
+1,
+10
+]
+],
+"parent": 0.5,
+"weighted": 0.5,
+"gain": 0.0,
+"splitinfo": 1.0,
+"gr": 0.0,
+"score": 0.0
+},
+{
+"attr": "Annual Income",
+"split": "<= 107.5",
+"names": [
+"<=107.5",
+">107.5"
+],
+"counts": [
+[
+1,
+2
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+3,
+8,
+10
+],
+[
+1
+]
+],
+"parent": 0.5,
+"weighted": 0.3333,
+"gain": 0.1667,
+"splitinfo": 0.8113,
+"gr": 0.2054,
+"score": 0.16666666666666669
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Single > Home Owner=Yes",
+"counts": [
+1,
+0
+],
+"ids": [
+1
+],
+"depth": 2,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Marital Status=Single > Home Owner=No",
+"counts": [
+1,
+2
+],
+"ids": [
+3,
+8,
+10
+],
+"depth": 2,
+"split": {
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+8,
+10
+]
+],
+"parent": 0.4444,
+"weighted": 0.0,
+"gain": 0.4444,
+"splitinfo": 0.9183,
+"gr": 0.484,
+"score": 0.4444444444444444
+},
+"ties": [
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+8,
+10
+]
+],
+"parent": 0.4444,
+"weighted": 0.0,
+"gain": 0.4444,
+"splitinfo": 0.9183,
+"gr": 0.484,
+"score": 0.4444444444444444
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+8,
+10
+]
+],
+"parent": 0.4444,
+"weighted": 0.0,
+"gain": 0.4444,
+"splitinfo": 0.9183,
+"gr": 0.484,
+"score": 0.4444444444444444
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+3,
+8
+],
+[
+10
+]
+],
+"parent": 0.4444,
+"weighted": 0.3333,
+"gain": 0.1111,
+"splitinfo": 0.9183,
+"gr": 0.121,
+"score": 0.1111111111111111
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Single > Home Owner=No > Annual Income=<=77.5",
+"counts": [
+1,
+0
+],
+"ids": [
+3
+],
+"depth": 3,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Marital Status=Single > Home Owner=No > Annual Income=>77.5",
+"counts": [
+0,
+2
+],
+"ids": [
+8,
+10
+],
+"depth": 3,
+"leaf": "Yes",
+"cands": null
+},
+{
+"path": "root > Marital Status=Married",
+"counts": [
+4,
+0
+],
+"ids": [
+2,
+4,
+6,
+9
+],
+"depth": 1,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Marital Status=Divorced",
+"counts": [
+1,
+1
+],
+"ids": [
+5,
+7
+],
+"depth": 1,
+"split": {
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"No",
+"Yes"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 0.5,
+"weighted": 0.0,
+"gain": 0.5,
+"splitinfo": 1.0,
+"gr": 0.5,
+"score": 0.5
+},
+"ties": [
+"Home Owner",
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"No",
+"Yes"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 0.5,
+"weighted": 0.0,
+"gain": 0.5,
+"splitinfo": 1.0,
+"gr": 0.5,
+"score": 0.5
+},
+{
+"attr": "Annual Income",
+"split": "<= 157.5",
+"names": [
+"<=157.5",
+">157.5"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 0.5,
+"weighted": 0.0,
+"gain": 0.5,
+"splitinfo": 1.0,
+"gr": 0.5,
+"score": 0.5
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 157.5",
+"names": [
+"<=157.5",
+">157.5"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 0.5,
+"weighted": 0.0,
+"gain": 0.5,
+"splitinfo": 1.0,
+"gr": 0.5,
+"score": 0.5
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Divorced > Home Owner=No",
+"counts": [
+0,
+1
+],
+"ids": [
+5
+],
+"depth": 2,
+"leaf": "Yes",
+"cands": null
+},
+{
+"path": "root > Marital Status=Divorced > Home Owner=Yes",
+"counts": [
+1,
+0
+],
+"ids": [
+7
+],
+"depth": 2,
+"leaf": "No",
+"cands": null
+}
+],
+"loan_ig": [
+{
+"path": "root",
+"counts": [
+7,
+3
+],
+"ids": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"depth": 0,
+"split": {
+"attr": "Marital Status",
+"split": "multi",
+"names": [
+"Single",
+"Married",
+"Divorced"
+],
+"counts": [
+[
+2,
+2
+],
+[
+4,
+0
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+1,
+3,
+8,
+10
+],
+[
+2,
+4,
+6,
+9
+],
+[
+5,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 1.5219,
+"gr": 0.1848,
+"score": 0.2812908992306926
+},
+"ties": [
+"Marital Status",
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+3,
+0
+],
+[
+4,
+3
+]
+],
+"ids": [
+[
+1,
+4,
+7
+],
+[
+2,
+3,
+5,
+6,
+8,
+9,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.6897,
+"gain": 0.1916,
+"splitinfo": 0.8813,
+"gr": 0.2174,
+"score": 0.19163120400671663
+},
+{
+"attr": "Marital Status",
+"split": "multi",
+"names": [
+"Single",
+"Married",
+"Divorced"
+],
+"counts": [
+[
+2,
+2
+],
+[
+4,
+0
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+1,
+3,
+8,
+10
+],
+[
+2,
+4,
+6,
+9
+],
+[
+5,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 1.5219,
+"gr": 0.1848,
+"score": 0.2812908992306926
+},
+{
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 0.971,
+"gr": 0.2897,
+"score": 0.2812908992306927
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 65",
+"names": [
+"<=65",
+">65"
+],
+"counts": [
+[
+1,
+0
+],
+[
+6,
+3
+]
+],
+"ids": [
+[
+6
+],
+[
+1,
+2,
+3,
+4,
+5,
+7,
+8,
+9,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.8265,
+"gain": 0.0548,
+"splitinfo": 0.469,
+"gr": 0.1169,
+"score": 0.054824648581652036
+},
+{
+"attr": "Annual Income",
+"split": "<= 72.5",
+"names": [
+"<=72.5",
+">72.5"
+],
+"counts": [
+[
+2,
+0
+],
+[
+5,
+3
+]
+],
+"ids": [
+[
+3,
+6
+],
+[
+1,
+2,
+4,
+5,
+7,
+8,
+9,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.7635,
+"gain": 0.1177,
+"splitinfo": 0.7219,
+"gr": 0.1631,
+"score": 0.11774369689072062
+},
+{
+"attr": "Annual Income",
+"split": "<= 80",
+"names": [
+"<=80",
+">80"
+],
+"counts": [
+[
+3,
+0
+],
+[
+4,
+3
+]
+],
+"ids": [
+[
+3,
+6,
+9
+],
+[
+1,
+2,
+4,
+5,
+7,
+8,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.6897,
+"gain": 0.1916,
+"splitinfo": 0.8813,
+"gr": 0.2174,
+"score": 0.19163120400671663
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+3,
+1
+],
+[
+4,
+2
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9
+],
+[
+1,
+2,
+4,
+5,
+7,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.8755,
+"gain": 0.0058,
+"splitinfo": 0.971,
+"gr": 0.006,
+"score": 0.0058021490143458365
+},
+{
+"attr": "Annual Income",
+"split": "<= 92.5",
+"names": [
+"<=92.5",
+">92.5"
+],
+"counts": [
+[
+3,
+2
+],
+[
+4,
+1
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+5,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.8464,
+"gain": 0.0349,
+"splitinfo": 1.0,
+"gr": 0.0349,
+"score": 0.034851554559677256
+},
+{
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 0.971,
+"gr": 0.2897,
+"score": 0.2812908992306927
+},
+{
+"attr": "Annual Income",
+"split": "<= 110",
+"names": [
+"<=110",
+">110"
+],
+"counts": [
+[
+4,
+3
+],
+[
+3,
+0
+]
+],
+"ids": [
+[
+2,
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6897,
+"gain": 0.1916,
+"splitinfo": 0.8813,
+"gr": 0.2174,
+"score": 0.19163120400671663
+},
+{
+"attr": "Annual Income",
+"split": "<= 122.5",
+"names": [
+"<=122.5",
+">122.5"
+],
+"counts": [
+[
+5,
+3
+],
+[
+2,
+0
+]
+],
+"ids": [
+[
+2,
+3,
+4,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.7635,
+"gain": 0.1177,
+"splitinfo": 0.7219,
+"gr": 0.1631,
+"score": 0.11774369689072062
+},
+{
+"attr": "Annual Income",
+"split": "<= 172.5",
+"names": [
+"<=172.5",
+">172.5"
+],
+"counts": [
+[
+6,
+3
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+8,
+9,
+10
+],
+[
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.8265,
+"gain": 0.0548,
+"splitinfo": 0.469,
+"gr": 0.1169,
+"score": 0.054824648581652036
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Single",
+"counts": [
+2,
+2
+],
+"ids": [
+1,
+3,
+8,
+10
+],
+"depth": 1,
+"split": {
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+1
+],
+[
+3,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.6887,
+"gain": 0.3113,
+"splitinfo": 0.8113,
+"gr": 0.3837,
+"score": 0.31127812445913283
+},
+"ties": [
+"Home Owner",
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+1
+],
+[
+3,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.6887,
+"gain": 0.3113,
+"splitinfo": 0.8113,
+"gr": 0.3837,
+"score": 0.31127812445913283
+},
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+1,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.6887,
+"gain": 0.3113,
+"splitinfo": 0.8113,
+"gr": 0.3837,
+"score": 0.31127812445913283
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+1,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+1,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.6887,
+"gain": 0.3113,
+"splitinfo": 0.8113,
+"gr": 0.3837,
+"score": 0.31127812445913283
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+1,
+1
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+3,
+8
+],
+[
+1,
+10
+]
+],
+"parent": 1.0,
+"weighted": 1.0,
+"gain": 0.0,
+"splitinfo": 1.0,
+"gr": 0.0,
+"score": 0.0
+},
+{
+"attr": "Annual Income",
+"split": "<= 107.5",
+"names": [
+"<=107.5",
+">107.5"
+],
+"counts": [
+[
+1,
+2
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+3,
+8,
+10
+],
+[
+1
+]
+],
+"parent": 1.0,
+"weighted": 0.6887,
+"gain": 0.3113,
+"splitinfo": 0.8113,
+"gr": 0.3837,
+"score": 0.31127812445913283
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Single > Home Owner=Yes",
+"counts": [
+1,
+0
+],
+"ids": [
+1
+],
+"depth": 2,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Marital Status=Single > Home Owner=No",
+"counts": [
+1,
+2
+],
+"ids": [
+3,
+8,
+10
+],
+"depth": 2,
+"split": {
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+8,
+10
+]
+],
+"parent": 0.9183,
+"weighted": 0.0,
+"gain": 0.9183,
+"splitinfo": 0.9183,
+"gr": 1.0,
+"score": 0.9182958340544896
+},
+"ties": [
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+8,
+10
+]
+],
+"parent": 0.9183,
+"weighted": 0.0,
+"gain": 0.9183,
+"splitinfo": 0.9183,
+"gr": 1.0,
+"score": 0.9182958340544896
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 77.5",
+"names": [
+"<=77.5",
+">77.5"
+],
+"counts": [
+[
+1,
+0
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3
+],
+[
+8,
+10
+]
+],
+"parent": 0.9183,
+"weighted": 0.0,
+"gain": 0.9183,
+"splitinfo": 0.9183,
+"gr": 1.0,
+"score": 0.9182958340544896
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+1,
+1
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+3,
+8
+],
+[
+10
+]
+],
+"parent": 0.9183,
+"weighted": 0.6667,
+"gain": 0.2516,
+"splitinfo": 0.9183,
+"gr": 0.274,
+"score": 0.2516291673878229
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Single > Home Owner=No > Annual Income=<=77.5",
+"counts": [
+1,
+0
+],
+"ids": [
+3
+],
+"depth": 3,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Marital Status=Single > Home Owner=No > Annual Income=>77.5",
+"counts": [
+0,
+2
+],
+"ids": [
+8,
+10
+],
+"depth": 3,
+"leaf": "Yes",
+"cands": null
+},
+{
+"path": "root > Marital Status=Married",
+"counts": [
+4,
+0
+],
+"ids": [
+2,
+4,
+6,
+9
+],
+"depth": 1,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Marital Status=Divorced",
+"counts": [
+1,
+1
+],
+"ids": [
+5,
+7
+],
+"depth": 1,
+"split": {
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"No",
+"Yes"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+},
+"ties": [
+"Home Owner",
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"No",
+"Yes"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+},
+{
+"attr": "Annual Income",
+"split": "<= 157.5",
+"names": [
+"<=157.5",
+">157.5"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 157.5",
+"names": [
+"<=157.5",
+">157.5"
+],
+"counts": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+5
+],
+[
+7
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+}
+]
+}
+},
+{
+"path": "root > Marital Status=Divorced > Home Owner=No",
+"counts": [
+0,
+1
+],
+"ids": [
+5
+],
+"depth": 2,
+"leaf": "Yes",
+"cands": null
+},
+{
+"path": "root > Marital Status=Divorced > Home Owner=Yes",
+"counts": [
+1,
+0
+],
+"ids": [
+7
+],
+"depth": 2,
+"leaf": "No",
+"cands": null
+}
+],
+"loan_gr": [
+{
+"path": "root",
+"counts": [
+7,
+3
+],
+"ids": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"depth": 0,
+"split": {
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 0.971,
+"gr": 0.2897,
+"score": 0.2897067068470965
+},
+"ties": [
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Home Owner",
+"split": "multi",
+"names": [
+"Yes",
+"No"
+],
+"counts": [
+[
+3,
+0
+],
+[
+4,
+3
+]
+],
+"ids": [
+[
+1,
+4,
+7
+],
+[
+2,
+3,
+5,
+6,
+8,
+9,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.6897,
+"gain": 0.1916,
+"splitinfo": 0.8813,
+"gr": 0.2174,
+"score": 0.21744375685031775
+},
+{
+"attr": "Marital Status",
+"split": "multi",
+"names": [
+"Single",
+"Married",
+"Divorced"
+],
+"counts": [
+[
+2,
+2
+],
+[
+4,
+0
+],
+[
+1,
+1
+]
+],
+"ids": [
+[
+1,
+3,
+8,
+10
+],
+[
+2,
+4,
+6,
+9
+],
+[
+5,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 1.5219,
+"gr": 0.1848,
+"score": 0.1848253542172181
+},
+{
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 0.971,
+"gr": 0.2897,
+"score": 0.2897067068470965
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 65",
+"names": [
+"<=65",
+">65"
+],
+"counts": [
+[
+1,
+0
+],
+[
+6,
+3
+]
+],
+"ids": [
+[
+6
+],
+[
+1,
+2,
+3,
+4,
+5,
+7,
+8,
+9,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.8265,
+"gain": 0.0548,
+"splitinfo": 0.469,
+"gr": 0.1169,
+"score": 0.11689800358692547
+},
+{
+"attr": "Annual Income",
+"split": "<= 72.5",
+"names": [
+"<=72.5",
+">72.5"
+],
+"counts": [
+[
+2,
+0
+],
+[
+5,
+3
+]
+],
+"ids": [
+[
+3,
+6
+],
+[
+1,
+2,
+4,
+5,
+7,
+8,
+9,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.7635,
+"gain": 0.1177,
+"splitinfo": 0.7219,
+"gr": 0.1631,
+"score": 0.16309615559301843
+},
+{
+"attr": "Annual Income",
+"split": "<= 80",
+"names": [
+"<=80",
+">80"
+],
+"counts": [
+[
+3,
+0
+],
+[
+4,
+3
+]
+],
+"ids": [
+[
+3,
+6,
+9
+],
+[
+1,
+2,
+4,
+5,
+7,
+8,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.6897,
+"gain": 0.1916,
+"splitinfo": 0.8813,
+"gr": 0.2174,
+"score": 0.21744375685031775
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+3,
+1
+],
+[
+4,
+2
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9
+],
+[
+1,
+2,
+4,
+5,
+7,
+10
+]
+],
+"parent": 0.8813,
+"weighted": 0.8755,
+"gain": 0.0058,
+"splitinfo": 0.971,
+"gr": 0.006,
+"score": 0.005975740730252702
+},
+{
+"attr": "Annual Income",
+"split": "<= 92.5",
+"names": [
+"<=92.5",
+">92.5"
+],
+"counts": [
+[
+3,
+2
+],
+[
+4,
+1
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+5,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.8464,
+"gain": 0.0349,
+"splitinfo": 1.0,
+"gr": 0.0349,
+"score": 0.034851554559677256
+},
+{
+"attr": "Annual Income",
+"split": "<= 97.5",
+"names": [
+"<=97.5",
+">97.5"
+],
+"counts": [
+[
+3,
+3
+],
+[
+4,
+0
+]
+],
+"ids": [
+[
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+2,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6,
+"gain": 0.2813,
+"splitinfo": 0.971,
+"gr": 0.2897,
+"score": 0.2897067068470965
+},
+{
+"attr": "Annual Income",
+"split": "<= 110",
+"names": [
+"<=110",
+">110"
+],
+"counts": [
+[
+4,
+3
+],
+[
+3,
+0
+]
+],
+"ids": [
+[
+2,
+3,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+4,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.6897,
+"gain": 0.1916,
+"splitinfo": 0.8813,
+"gr": 0.2174,
+"score": 0.21744375685031775
+},
+{
+"attr": "Annual Income",
+"split": "<= 122.5",
+"names": [
+"<=122.5",
+">122.5"
+],
+"counts": [
+[
+5,
+3
+],
+[
+2,
+0
+]
+],
+"ids": [
+[
+2,
+3,
+4,
+5,
+6,
+8,
+9,
+10
+],
+[
+1,
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.7635,
+"gain": 0.1177,
+"splitinfo": 0.7219,
+"gr": 0.1631,
+"score": 0.16309615559301843
+},
+{
+"attr": "Annual Income",
+"split": "<= 172.5",
+"names": [
+"<=172.5",
+">172.5"
+],
+"counts": [
+[
+6,
+3
+],
+[
+1,
+0
+]
+],
+"ids": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+8,
+9,
+10
+],
+[
+7
+]
+],
+"parent": 0.8813,
+"weighted": 0.8265,
+"gain": 0.0548,
+"splitinfo": 0.469,
+"gr": 0.1169,
+"score": 0.11689800358692547
+}
+]
+}
+},
+{
+"path": "root > Annual Income=<=97.5",
+"counts": [
+3,
+3
+],
+"ids": [
+3,
+5,
+6,
+8,
+9,
+10
+],
+"depth": 1,
+"split": {
+"attr": "Annual Income",
+"split": "<= 80",
+"names": [
+"<=80",
+">80"
+],
+"counts": [
+[
+3,
+0
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+3,
+6,
+9
+],
+[
+5,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+},
+"ties": [
+"Annual Income"
+],
+"cands": [
+{
+"attr": "Marital Status",
+"split": "multi",
+"names": [
+"Single",
+"Divorced",
+"Married"
+],
+"counts": [
+[
+1,
+2
+],
+[
+0,
+1
+],
+[
+2,
+0
+]
+],
+"ids": [
+[
+3,
+8,
+10
+],
+[
+5
+],
+[
+6,
+9
+]
+],
+"parent": 1.0,
+"weighted": 0.4591,
+"gain": 0.5409,
+"splitinfo": 1.4591,
+"gr": 0.3707,
+"score": 0.37066295792317305
+},
+{
+"attr": "Annual Income",
+"split": "<= 80",
+"names": [
+"<=80",
+">80"
+],
+"counts": [
+[
+3,
+0
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+3,
+6,
+9
+],
+[
+5,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+}
+],
+"allc": {
+"Annual Income": [
+{
+"attr": "Annual Income",
+"split": "<= 65",
+"names": [
+"<=65",
+">65"
+],
+"counts": [
+[
+1,
+0
+],
+[
+2,
+3
+]
+],
+"ids": [
+[
+6
+],
+[
+3,
+5,
+8,
+9,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.8091,
+"gain": 0.1909,
+"splitinfo": 0.65,
+"gr": 0.2936,
+"score": 0.2936429548646674
+},
+{
+"attr": "Annual Income",
+"split": "<= 72.5",
+"names": [
+"<=72.5",
+">72.5"
+],
+"counts": [
+[
+2,
+0
+],
+[
+1,
+3
+]
+],
+"ids": [
+[
+3,
+6
+],
+[
+5,
+8,
+9,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.5409,
+"gain": 0.4591,
+"splitinfo": 0.9183,
+"gr": 0.5,
+"score": 0.5
+},
+{
+"attr": "Annual Income",
+"split": "<= 80",
+"names": [
+"<=80",
+">80"
+],
+"counts": [
+[
+3,
+0
+],
+[
+0,
+3
+]
+],
+"ids": [
+[
+3,
+6,
+9
+],
+[
+5,
+8,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.0,
+"gain": 1.0,
+"splitinfo": 1.0,
+"gr": 1.0,
+"score": 1.0
+},
+{
+"attr": "Annual Income",
+"split": "<= 87.5",
+"names": [
+"<=87.5",
+">87.5"
+],
+"counts": [
+[
+3,
+1
+],
+[
+0,
+2
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9
+],
+[
+5,
+10
+]
+],
+"parent": 1.0,
+"weighted": 0.5409,
+"gain": 0.4591,
+"splitinfo": 0.9183,
+"gr": 0.5,
+"score": 0.5
+},
+{
+"attr": "Annual Income",
+"split": "<= 92.5",
+"names": [
+"<=92.5",
+">92.5"
+],
+"counts": [
+[
+3,
+2
+],
+[
+0,
+1
+]
+],
+"ids": [
+[
+3,
+6,
+8,
+9,
+10
+],
+[
+5
+]
+],
+"parent": 1.0,
+"weighted": 0.8091,
+"gain": 0.1909,
+"splitinfo": 0.65,
+"gr": 0.2936,
+"score": 0.2936429548646674
+}
+]
+}
+},
+{
+"path": "root > Annual Income=<=97.5 > Annual Income=<=80",
+"counts": [
+3,
+0
+],
+"ids": [
+3,
+6,
+9
+],
+"depth": 2,
+"leaf": "No",
+"cands": null
+},
+{
+"path": "root > Annual Income=<=97.5 > Annual Income=>80",
+"counts": [
+0,
+3
+],
+"ids": [
+5,
+8,
+10
+],
+"depth": 2,
+"leaf": "Yes",
+"cands": null
+},
+{
+"path": "root > Annual Income=>97.5",
+"counts": [
+4,
+0
+],
+"ids": [
+1,
+2,
+4,
+7
+],
+"depth": 1,
+"leaf": "No",
+"cands": null
+}
+]
+}

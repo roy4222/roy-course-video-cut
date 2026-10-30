@@ -1,0 +1,223 @@
+import os,sys;sys.path.insert(0,os.environ.get('EP_ENGINE','/workspace/video_style/epB_engine'))
+from lib import Ep
+ep=Ep(16,'決策樹全貌：演算法流程、回歸樹、C4.5 vs CART','',
+ '把決策樹整個拼起來：讀懂 TreeGrowth 虛擬碼的四個函式、停止條件與超參數；看回歸樹怎麼用「變異數降低」來分裂；再整理決策樹的特性（缺值處理、無關與重複特徵、只能直角切割）、優缺點，以及 C4.5 和 CART 的差別。',
+ ['機器學習','決策樹','CART','C4.5','回歸樹','虛擬碼','缺值','機器學習從零開始','作業二','作業三'],'EP17 過擬合與超參數')
+E=ep.E;L=ep.L
+CX,CY,SZ=150,210,24;LH=SZ*1.5
+def hlc(i0,i1,at,until=None,col='B',x=CX,y=CY,w=1000):
+    E('hl',x=x+136,y=y+70+i0*LH-3,w=w-160,h=(i1-i0+1)*LH+2,col=col,at=at,until=until)
+# ---------- title
+ep.scene('title','',noHeader=True,chapter='開場',desc='EP16 標題卡＋今日地圖')
+E('titlecard',ep='EP16 · 決策樹（四）全貌',title='把決策樹整個拼起來',sub='演算法流程・回歸樹・特性・C4.5 vs CART')
+L('嗨，歡迎回到機器學習補習班。這是第十六集。')
+L('前面三集，我們一塊一塊學了決策樹：怎麼看樹、怎麼長樹、怎麼挑最好的切法。')
+i=L('今天要把這些零件組裝起來，看完整的流程，再看看決策樹有哪些優點、哪些限制。')
+E('text',s='今天的地圖',x=960,y=620,size=26,col='DIM',align='center',at=i)
+E('chips',y=690,items=[dict(s='TreeGrowth 虛擬碼',at=[i,0.3]),dict(s='停止條件・超參數',at=[i,0.6]),dict(s='回歸樹',at=[i,0.9]),dict(s='特性與限制',at=[i,1.2]),dict(s='優缺點',at=[i,1.5]),dict(s='C4.5 vs CART',at=[i,1.8])],size=26)
+# ---------- hook
+ep.scene('hook','先想想：一份「食譜」',chapter='開場：演算法就是食譜',desc='食譜步驟卡：檢查 → 動作 → 重複，對應演算法的步驟',ref='PART03 p98')
+a=L('你照著食譜煮過菜嗎？食譜會一步一步告訴你：先檢查材料夠不夠，夠了就開始切菜、下鍋，再試味道，不夠鹹就再加鹽，重複到好吃為止。')
+b=L('演算法就是給電腦看的食譜。決策樹的食譜，講義叫它 TreeGrowth，意思是「把樹長出來」。')
+c=L('它的材料是兩樣東西：訓練資料 E，和屬性的集合 F。成品是一棵可以拿來分類新資料的決策樹。')
+d=L('其實這份食譜我們已經會了一大半，就是第十四集的 Hunt 演算法，只是今天把它寫得更正式。')
+E('flow',x=150,w=1620,y=230,items=[dict(s='檢查',sub='材料夠了嗎？',col='A',at=a),dict(s='動作',sub='切菜、下鍋',col='A',at=[a,2]),dict(s='試味道',sub='夠不夠鹹？',col='B',at=[a,4]),dict(s='重複',sub='直到好吃',col='PUR',at=[a,6])])
+E('card',x=150,y=440,w=780,h=220,title='TreeGrowth(E, F)',sub='把樹長出來的食譜',col='OK',at=b,body=[dict(s='輸入：訓練資料 E、屬性集合 F',at=c),dict(s='輸出：一棵決策樹',at=c)],bs=28)
+E('card',x=990,y=440,w=780,h=220,title='其實就是 EP14 的 Hunt',col='B',at=d,body=['全部同類 → 葉子','不純 → 挑屬性分組 → 遞迴'],bs=28)
+# ---------- pseudocode
+PC=['TreeGrowth(E, F):','1  if stopping_cond(E, F) == true:','2    leaf = createNode()','3    leaf.label = Classify(E)','4    return leaf','5  else:','6    root = createNode()','7    root.test_cond = find_best_split(E, F)','8    V = { root.test_cond 的所有可能結果 v }','9    for each v in V:','10     Ev = { e in E | test_cond(e) == v }','11     child = TreeGrowth(Ev, F)','12     把 child 接到 root 下，邊標上 v','13   end for','14 end if','15 return root']
+ep.scene('pseudo','TreeGrowth 虛擬碼，一行一行看',chapter='TreeGrowth 虛擬碼',desc='講義 p102 虛擬碼面板，依序亮起：停止條件、建葉子、找最佳分裂、對每個結果遞迴',ref='PART03 p98–106',tag='程式觀念',tagCol='CY')
+a=L('這是講義第一百零二頁的虛擬碼。虛擬碼就是用接近程式的方式寫步驟，不用管文法。我們一段一段看。')
+b=L('第一行：先問「停止條件」成立了嗎？也就是：這一群資料，還需要再分嗎？')
+c=L('如果要停，第二到四行：做一個新節點，當成葉子，用 Classify 決定它的類別，然後回傳。')
+d=L('如果不停，第六、七行：做一個新節點當根，再用 find best split，找出最好的測試條件。這就是上一集學的，用 Gini 或 Entropy 挑分數最好的那個。')
+e=L('第八到十二行：測試條件有幾種結果，就把資料分成幾組，每一組再呼叫 TreeGrowth 自己一次，長出子樹，接回來。')
+f=L('自己呼叫自己，就是遞迴。一直做到每一組都停下來，整棵樹就長好了。')
+E('code',x=CX,y=CY,w=1000,h=680,title='TreeGrowth（講義 p102）',size=SZ,cells=[dict(at=a,code=PC)])
+hlc(1,1,b,c,'A');hlc(2,4,c,d,'OK');hlc(6,7,d,e,'B');hlc(8,12,e,None,'PUR')
+E('bullets',x=1210,y=220,w=560,size=28,rh=120,gap=16,items=[dict(s='① 停嗎？stopping_cond',at=b,col='A'),dict(s='② 停 → 葉子＋Classify',at=c,col='OK'),dict(s='③ 不停 → find_best_split',at=d,col='B'),dict(s='④ 每組遞迴 TreeGrowth',at=e,col='PUR')])
+E('card',x=1210,y=760,w=560,h=110,title='自己呼叫自己 ＝ 遞迴',ts=30,col='PUR',align='center',at=f)
+# ---------- functions
+ep.scene('funcs','四個小幫手函式',chapter='四個函式：createNode、find_best_split、Classify、stopping_cond',desc='四張函式卡；Classify 例子：葉子 (3,1) → p(0|t)=0.75 → 標成類別 0',ref='PART03 p99–101')
+a=L('虛擬碼裡有四個小幫手，我們一個一個認識。')
+b=L('createNode，建立節點。節點不是內部節點，掛一個測試條件；就是葉節點，掛一個類別標籤。')
+c=L('find best split，找最佳分裂。它決定要用哪個屬性、怎麼切；挑的標準就是不純度，常用的是 Entropy 和 Gini。')
+d=L('Classify，幫葉子決定類別。講義寫成 argmax p of i given t，看起來很嚇人，其實就是「多數決」。')
+e=L('p of i given t，是葉子 t 裡面，第 i 類所佔的比例。argmax 的意思是「找出讓這個值最大的那個 i」。')
+f=L('例如一片葉子裡有三筆零類、一筆一類。零類的比例是四分之三，零點七五；一類是零點二五。最大的是零類，所以這片葉子標成零類。這個零點七五，也可以粗略當成「是零類的機率」。')
+g=L('最後是 stopping cond，停止條件，決定要不要繼續長。下一段我們專門來看。')
+E('card',x=150,y=210,w=800,h=150,title='createNode()',sub='建節點：內部節點掛測試條件／葉節點掛類別',col='A',at=b)
+E('card',x=150,y=380,w=800,h=150,title='find_best_split(E, F)',sub='挑屬性與切法：用不純度（Entropy、Gini）',col='B',at=c)
+E('card',x=150,y=550,w=800,h=150,title='Classify(E)',sub='葉子的類別 ＝ 多數決',col='OK',at=d)
+E('card',x=150,y=720,w=800,h=130,title='stopping_cond(E, F)',sub='要不要繼續長？',col='PUR',at=g)
+E('formula',x=1010,y=210,w=760,h=300,lines=[dict(s='leaf.label = argmax p(i|t)',at=d,col='OK'),dict(s='p(i|t)：葉子 t 中第 i 類的比例',at=e,cjk=True,w=700),dict(s='argmax：讓它最大的那個 i',at=e,cjk=True,w=700,col='DIM')],size=30)
+E('formula',x=1010,y=540,w=760,h=240,label='例：葉子 (3, 1)',lines=[dict(s='p(0|t) = 3/4 = 0.75',at=f),dict(s='p(1|t) = 1/4 = 0.25',at=f),dict(s='→ 標成類別 0',at=[f,3],col='OK',cjk=True,w=700)],size=30)
+# ---------- stopping & hyperparameters
+ep.scene('stop','停止條件與超參數',chapter='停止條件與超參數',desc='兩種自然停止＋三種人為設定：最大深度、葉子最少筆數、最小增益門檻',ref='PART03 p101、p106')
+a=L('什麼時候該停？最自然的有兩種情況。')
+b=L('第一，這群資料全部同一類了，已經純了，不用再分。第二，大家的屬性值全部一模一樣，想分也分不開。')
+c=L('但如果只靠這兩條，樹常常會長得又深又大。所以講義說，還要考慮一些人為設定的條件。')
+d=L('例如：樹最多只能長幾層，叫最大深度；一片葉子至少要有幾筆資料；或是分裂後的增益太小，低於某個門檻，就不分了。')
+e=L('這些「要在訓練前，由人先決定好」的設定，叫做「超參數」，英文是 hyperparameter。就像烤蛋糕前，先決定烤幾分鐘、幾度。')
+f=L('作業三要你選兩個 CART 的超參數，各試三個值。最大深度就是最常見的一個。下一集我們會詳細講超參數。')
+E('card',x=150,y=210,w=780,h=260,title='自然停止',col='OK',at=a,body=[dict(s='① 全部同一類（已經純了）',at=b),dict(s='② 屬性值全部一樣（分不開）',at=b)],bs=28)
+E('card',x=990,y=210,w=780,h=380,title='人為設定（超參數）',col='B',at=d,body=['最大深度 max_depth','葉子最少筆數 min_samples_leaf','最小增益門檻（增益太小就不分）'],bs=28)
+E('card',x=150,y=500,w=780,h=170,title='只靠自然停止 → 樹又深又大',ts=30,col='BAD',at=c)
+E('card',x=150,y=700,w=1620,h=130,title='超參數 hyperparameter ＝ 訓練前由人決定的設定（像烤箱的時間和溫度）',ts=30,col='A',at=e,body=[dict(s='作業三：選 2 個 CART 超參數 × 3 個值',at=f,col='B')],bs=26)
+# ---------- regression tree
+ep.scene('reg','回歸樹：答案是數字的時候',chapter='回歸樹：用變異數降低來分裂',desc='講義 p107–108：員工收入的回歸樹；根節點 N=10、平均 47、變異數 121.4 → 依年資分裂後加權變異數 16.34，降低 105.06',ref='PART03 p107–108')
+a=L('到目前為止，樹的葉子給的都是類別，例如會不會違約。如果要預測的是一個數字呢？例如一個人的月收入。')
+b=L('這種「答案是數字」的問題叫回歸，這時候的樹就叫回歸樹。葉子給的答案，是走到這片葉子的資料的平均值。')
+c=L('那「純不純」要怎麼量？改用變異數。變異數就是每個值離平均有多遠，平方以後再平均。大家的數字越接近，變異數越小，就越「純」。')
+d=L('挑分裂的方法跟分類一樣：比較每個屬性分完以後，加權的變異數降了多少，這叫「變異數降低」，variance reduction。降最多的就贏。')
+e=L('來看講義第一百零八頁，用員工收入當目標的樹。根節點有十個人，平均四十七，變異數一百二十一點四。')
+f=L('用年資切成兩組：十年以下的八個人，平均四十一點八八，變異數六點三六；十年以上的兩個人，平均六十七點五，變異數五十六點二五。')
+g=L('加權變異數是：八乘六點三六，加二乘五十六點二五，除以十，大約十六點三四。從一百二十一點四降到十六點三四，降低了大約一百零五。降很多，所以這一刀切得很好。')
+E('formula',x=150,y=210,w=820,h=230,lines=[dict(s='S²(t) = Σ (yᵢ − ȳ)² / Nₜ',at=c,col='B'),dict(s='離平均多遠 → 平方 → 平均',at=c,cjk=True,w=700,col='DIM'),dict(s='越小 → 數字越接近 → 越純',at=[c,3],cjk=True,w=700,col='OK')],size=32)
+E('card',x=150,y=470,w=820,h=150,title='回歸樹 regression tree',sub='答案是數字・葉子給「平均值」',col='A',at=b)
+E('card',x=150,y=650,w=820,h=150,title='變異數降低 variance reduction',sub='分完以後，加權變異數降最多的屬性贏',col='OK',at=d)
+E('tree',at=e,nodes=[dict(id='r',x=1370,y=260,label='N=10・平均 47',sub='變異數 121.4',at=e),dict(id='l',x=1170,y=470,label='N=8・平均 41.88',sub='變異數 6.36',at=f),dict(id='rr',x=1580,y=470,label='N=2・平均 67.5',sub='變異數 56.25',at=f)],
+  edges=[dict(a='r',b='l',label='年資 10 年以下'),dict(a='r',b='rr',label='10 年以上')])
+E('formula',x=1010,y=590,w=760,h=210,lines=[dict(s='(8×6.36 + 2×56.25) / 10 ≈ 16.34',at=g),dict(s='121.4 − 16.34 ≈ 105.06',at=[g,4],col='OK')],size=28)
+# ---------- characteristics 1
+ep.scene('char1','決策樹的特性（一）：好用的地方',chapter='特性：無母數、可表達性、效率',desc='講義 p109–114：無母數、免標準化、多類別、好解釋；16 種組合 → 7 片葉子；分類只要走 O(w) 步',ref='PART03 p109–114')
+a=L('接下來看決策樹的特性。第一，它是「無母數」的方法，英文是 nonparametric。')
+b=L('無母數聽起來很玄，白話就是：它不需要先假設資料長成某種形狀，例如常態分佈。有點像量身訂做，不是先拿一件固定尺寸的衣服來套。')
+c=L('第二，類別型、連續型的屬性都能直接用，不需要先做標準化或正規化。多類別的問題，也不用拆成好幾個二元問題。')
+d=L('第三，可表達性。講義的例子：四個是非屬性，總共有十六種組合。最笨的樹要十六片葉子，但好的樹可以壓縮成七片葉子，就表達同一件事。')
+e=L('第四，效率高。長樹用的是貪婪、由上而下的策略，資料很大也長得快。分類新資料更快，只要從根走到葉子，最多走 w 步，w 是樹的深度。')
+E('bullets',x=150,y=210,w=1620,size=30,gap=14,rh=96,items=[dict(s='無母數 nonparametric：不先假設資料的分佈（量身訂做）',at=a,col='A'),dict(s='類別、連續都能用・不用標準化・多類別直接做',at=c,col='OK'),dict(s='可表達性：4 個是非屬性 16 種組合 → 7 片葉子就夠',at=d,col='B'),dict(s='效率：長樹快；分類只走 O(w) 步（w ＝ 樹的深度）',at=e,col='PUR')])
+E('card',x=150,y=650,w=1620,h=150,title='無母數 ＝ 不先拿固定尺寸的衣服來套',ts=30,col='A',at=b,until=c,body=['不需要假設常態分佈等形狀'],bs=26)
+# ---------- missing values
+ep.scene('missing','特性（二）：遇到缺值怎麼辦？',chapter='特性：缺值處理（C4.5 機率分配、CART 代理分裂）',desc='講義 p115–117：測試資料 Home Owner 缺值；C4.5 依比例分到兩邊（No 0.7）；CART 找最像的代理屬性；或前處理補值',ref='PART03 p115–117')
+a=L('如果一筆新資料，剛好缺了某個屬性的值，例如不知道他有沒有房子，走到「有房子嗎」這個節點，要往哪邊走？')
+b=L('C4.5 的做法叫「機率分裂」：兩邊都走，但按比例分。訓練資料裡，十個人有七個沒房子，就把這筆資料的百分之七十送往「No」，百分之三十送往「Yes」，最後再把兩邊的結果加權合起來。')
+c=L('CART 的做法叫「代理分裂」，surrogate split：找另一個沒有缺值、而且切法跟原本屬性最像的屬性，用它來決定往哪邊走。就像主考官請假，找一位評分標準最接近的代理考官。')
+d=L('另一種做法是在訓練前就先處理：類別型的缺值補最常出現的值，叫眾數；連續型補平均數；也可以用 KNN 之類的模型來推估，或直接把那筆資料刪掉。')
+e=L('作業三的 Titanic 有不少缺值，例如年齡，前處理那一步就會用到。')
+E('tree',at=a,nodes=[dict(id='r',x=480,y=270,label='Home Owner？',at=a),dict(id='y',x=280,y=470,label='Yes 這邊',leaf=True,at=a),dict(id='n',x=680,y=470,label='No 這邊',leaf=True,at=a)],
+  edges=[dict(a='r',b='y',label='0.3'),dict(a='r',b='n',label='0.7')])
+E('text',s='新資料：Home Owner ＝ ?',x=480,y=620,size=28,col='B',align='center',at=a)
+E('card',x=950,y=210,w=820,h=180,title='C4.5：機率分裂',sub='兩邊都走，依比例：No 0.7、Yes 0.3',col='A',at=b)
+E('card',x=950,y=410,w=820,h=180,title='CART：代理分裂 surrogate split',sub='找切法最像的另一個屬性 → 代理考官',col='OK',at=c)
+E('card',x=950,y=610,w=820,h=180,title='前處理：補值或刪除',sub='類別 → 眾數・連續 → 平均・KNN 推估・刪掉',col='PUR',at=d)
+E('chips',y=740,cx=480,items=[dict(s='作業三 Titanic：Age 有缺值',col='B',at=e)],size=26)
+# ---------- attributes
+ep.scene('attrs','特性（三）：交互作用、無關、重複的屬性',chapter='特性：交互作用、無關與重複的屬性',desc='講義 p118–121 三張卡：交互作用（單獨沒用、合起來有用）、無關屬性（自然被跳過）、重複屬性（只會選一個）',ref='PART03 p118–121')
+a=L('再來看屬性之間的關係，講義分成三種。')
+b=L('第一種，交互作用。有些屬性單獨看沒什麼用，合起來才有用。就像鹽和檸檬，單獨吃都不好吃，一起加在魚上就很對味。')
+c=L('決策樹一次只看一個屬性，所以交互作用太複雜時，它要長出很大的樹才學得會，表現也可能變差。')
+d=L('第二種，無關屬性，例如用「客戶的幸運數字」來預測違約。它跟答案沒關係，分了也不會變純，所以挑分裂時自然會被跳過。少量的無關屬性影響不大；太多的話，可以先做特徵選擇刪掉。')
+e=L('第三種，重複屬性，例如「身高公分」和「身高英吋」。兩個幾乎一樣，分裂效果也一樣，樹只會選其中一個，所以決策樹不怕重複屬性。')
+E('card',x=150,y=220,w=520,h=430,title='交互作用',sub='單獨沒用、合起來有用',col='BAD',at=b,body=['鹽＋檸檬＋魚',dict(s='→ 樹一次看一個',at=c),dict(s='→ 要長很大才學得會',at=c)],bs=28)
+E('card',x=700,y=220,w=520,h=430,title='無關屬性',sub='跟答案沒關係',col='OK',at=d,body=['例：幸運數字','→ 分了不會變純','→ 自然被跳過','太多 → 特徵選擇'],bs=28)
+E('card',x=1250,y=220,w=520,h=430,title='重複屬性',sub='兩個屬性幾乎一樣',col='OK',at=e,body=['例：公分 vs 英吋','→ 只會選一個','→ 不怕重複'],bs=28)
+E('chips',y=740,items=[dict(s='交互作用 → 弱點',col='BAD',at=c),dict(s='無關、重複 → 處理得不錯',col='OK',at=e)],size=28)
+# ---------- rectilinear
+PTS_O=[(.15,.92),(.1,.56),(.3,.68),(.4,.51),(.45,.1),(.68,.25),(.92,.3)]
+PTS_T=[(.08,.38),(.1,.12),(.25,.2),(.37,.43),(.58,.9),(.75,.8),(.88,.55),(.5,.37)]
+ep.scene('rect','特性（四）：只能直著切、橫著切',chapter='特性：直角切割與決策邊界',desc='講義 p122：二維資料，x<0.43、y<0.47、y<0.33 三刀把平面切成四塊，邊界都和座標軸平行',ref='PART03 p122')
+a=L('決策樹還有一個很重要的特性。我們把資料畫在平面上：橫軸是 x，縱軸是 y，圓圈和三角形是兩種類別。')
+b=L('樹的第一個問題：x 小於零點四三嗎？這在圖上就是一條直的線，把平面切成左右兩半。')
+c=L('左邊那半，再問 y 小於零點四七嗎？是一條橫線。右邊那半，問 y 小於零點三三嗎？也是一條橫線。')
+d=L('切完以後，平面被分成四塊，每一塊裡面都只剩一種類別。不同類別區域之間的界線，叫做「決策邊界」，decision boundary。')
+e=L('你發現了嗎？因為每次只問一個屬性，所以邊界一定是直的或橫的，跟座標軸平行。這叫「直角切割」，rectilinear split。就像一把只能直切、橫切的菜刀。')
+E('plot',x=200,y=220,w=520,h=520,xr=[0,1],yr=[0,1],at=a,ticks=dict(x=[0,0.5,1],y=[0,0.5,1]),xlab='x',ylab='y',series=[],
+  pts=[dict(x=p[0],y=p[1],m='o',col='A',at=a) for p in PTS_O]+[dict(x=p[0],y=p[1],m='x',col='OK',at=a) for p in PTS_T],
+  segs=[dict(pts=[(.43,0),(.43,1)],col='B',at=b,lw=4),dict(pts=[(0,.47),(.43,.47)],col='B',at=c,lw=4),dict(pts=[(.43,.33),(1,.33)],col='B',at=c,lw=4)])
+E('chips',y=800,cx=460,items=[dict(s='○ 圓圈類',col='A',at=a),dict(s='× 另一類',col='OK',at=a)],size=24)
+E('tree',at=b,nodes=[dict(id='r',x=1270,y=260,label='x < 0.43 ？',at=b),dict(id='l',x=1060,y=430,label='y < 0.47 ？',at=c),dict(id='rr',x=1480,y=430,label='y < 0.33 ？',at=c),
+  dict(id='a1',x=960,y=600,label='× 4',leaf=True,at=d),dict(id='a2',x=1160,y=600,label='○ 4',leaf=True,at=d),dict(id='a3',x=1380,y=600,label='○ 3',leaf=True,at=d),dict(id='a4',x=1580,y=600,label='× 4',leaf=True,at=d)],
+  edges=[dict(a='r',b='l',label='Yes'),dict(a='r',b='rr',label='No'),dict(a='l',b='a1',label='Yes'),dict(a='l',b='a2',label='No'),dict(a='rr',b='a3',label='Yes'),dict(a='rr',b='a4',label='No')])
+E('card',x=880,y=700,w=890,h=130,title='邊界都和座標軸平行 ＝ 直角切割',ts=30,col='B',align='center',at=e)
+# ---------- oblique
+import random
+random.seed(7)
+def cloud(cx,cy,n):
+    out=[]
+    while len(out)<n:
+        u=random.gauss(0,2.2);v=random.gauss(0,0.9)
+        x=cx+u*0.707-v*0.707;y=cy+u*0.707+v*0.707
+        if 1<x<19 and 1<y<19: out.append((round(x,2),round(y,2)))
+    return out
+CP=cloud(8.3,8.3,40);CO=cloud(11.7,11.7,40)
+STAIR=[(2,18),(6,18),(6,14),(9,14),(9,11),(11,11),(11,9),(14,9),(14,6),(18,6),(18,2)]
+ep.scene('oblique','直角切割的限制與斜切樹',chapter='限制：斜線邊界與斜切樹',desc='講義 p123–125：兩群沿對角線分佈的資料，真正邊界是 x+y=20；直角切割只能用階梯去逼近；斜切樹一刀 X+Y<20',ref='PART03 p123–125')
+a=L('直角切割有什麼問題？看這份資料。兩種類別沿著斜的方向分佈，一群中心在八、八，另一群在十二、十二。')
+b=L('真正最好的界線，是這條斜線：x 加 y 等於二十。')
+c=L('可是決策樹只能直切、橫切，所以它只好用一格一格的階梯，去慢慢逼近這條斜線。切了很多刀，樹變得很大，而且還是切不準。')
+d=L('解法是「斜切樹」，oblique decision tree：允許一個測試條件同時用好幾個屬性，例如直接問：x 加 y 小於二十嗎？一刀就搞定。')
+e=L('那為什麼不都用斜切？因為能選的斜線有無限多條，要找出最好的那一條，計算量大很多。這是表達能力和計算成本的取捨。')
+E('plot',x=200,y=220,w=540,h=540,xr=[0,20],yr=[0,20],at=a,ticks=dict(x=[0,10,20],y=[0,10,20]),xlab='x',ylab='y',series=[dict(pts=STAIR,col='B',at=c,draw=3,lw=4)],
+  pts=[dict(x=p[0],y=p[1],m='x',col='OK',at=a) for p in CP]+[dict(x=p[0],y=p[1],m='o',col='A',at=a) for p in CO],
+  segs=[dict(pts=[(1,19),(19,1)],col='BAD',dash=[10,8],at=b,lw=4)])
+E('card',x=850,y=220,w=920,h=150,title='真正的邊界：x + y = 20（斜線）',ts=32,col='BAD',at=b)
+E('card',x=850,y=390,w=920,h=170,title='直角切割：只能用階梯逼近',col='B',at=c,body=['刀數多 → 樹很大 → 還切不準'],bs=28)
+E('card',x=850,y=580,w=920,h=200,title='斜切樹 oblique decision tree',sub='一個條件用多個屬性：X + Y < 20 ？',col='OK',at=d,body=[dict(s='代價：找最佳斜線的計算量大很多',at=e,col='BAD')],bs=28)
+# ---------- impurity choice
+ep.scene('impchoice','Gini 還是 Entropy？其實差不多',chapter='特性：不純度的選擇影響不大',desc='講義 p126：不純度量法彼此一致；剪枝策略對最後的樹影響更大',ref='PART03 p126')
+a=L('上一集我們學了 Gini、Entropy 和分類錯誤率。很多同學會問：到底要用哪一個？')
+b=L('講義的答案是：差不多。因為這幾種量法的排名通常很一致，選哪一個，對最後的準確率影響很小。')
+c=L('真正影響比較大的，是「剪枝」的策略，也就是樹長出來以後，要怎麼修剪。這個我們在第十九集會講。')
+E('card',x=150,y=230,w=780,h=250,title='Gini vs Entropy vs Error',col='A',at=a,body=[dict(s='排名通常很一致',at=b),dict(s='→ 對準確率影響小',at=b,col='OK')],bs=30)
+E('card',x=990,y=230,w=780,h=250,title='影響更大的是：剪枝策略',col='B',at=c,body=['樹長出來以後怎麼修剪','→ EP19'],bs=30)
+# ---------- pros cons
+ep.scene('proscons','決策樹的優點與缺點',chapter='優點與缺點',desc='講義 p127–128：五個優點（綠）與五個缺點（紅）',ref='PART03 p127–128')
+a=L('把決策樹的優缺點整理一下，這是考試和報告很常用到的。')
+b=L('優點：建模快、分類快；小樹可以直接翻成 IF THEN 規則，很好解釋；各種型態的資料都能處理；不太需要前處理，例如標準化；分層切割也能表達非線性的關係。')
+c=L('缺點：貪婪的做法不保證整體最好，只是每一步局部最好；樹太深容易過擬合，把雜訊也背起來；不穩定，資料稍微改一點，樹可能長得完全不一樣。')
+d=L('還有，複雜的交互作用要很大的樹才學得會；而且準確度和可解釋性要取捨：小樹好懂但可能不夠準，深樹準一點但很難看懂。')
+E('bullets',x=150,y=250,w=790,size=26,gap=10,rh=78,items=[dict(s='快：建模快、分類快',at=b,col='OK'),dict(s='好解釋：小樹 → IF–THEN 規則',at=[b,2],col='OK'),dict(s='資料型態彈性高',at=[b,4],col='OK'),dict(s='前處理少：不用標準化',at=[b,6],col='OK'),dict(s='能表達非線性、交互作用',at=[b,8],col='OK')])
+E('bullets',x=980,y=250,w=790,size=26,gap=10,rh=78,items=[dict(s='貪婪 → 不保證整體最佳',at=c,col='BAD'),dict(s='太深 → 過擬合',at=[c,2],col='BAD'),dict(s='不穩定：資料小改，樹大變',at=[c,4],col='BAD'),dict(s='複雜交互作用 → 樹很大',at=d,col='BAD'),dict(s='準確度 vs 可解釋性的取捨',at=[d,3],col='BAD')])
+E('text',s='優點 Advantages',x=545,y=215,size=28,col='OK',align='center',at=b)
+E('text',s='缺點 Disadvantages',x=1375,y=215,size=28,col='BAD',align='center',at=c)
+# ---------- c45 vs cart
+ep.scene('algos','常見的決策樹演算法：C4.5 vs CART',chapter='C4.5 vs CART（還有 ID3、CHAID）',desc='講義 p129 比較表重點：分枝準則、分枝方式、剪枝、缺值處理',ref='PART03 p129–134')
+a=L('最後，認識幾個有名字的決策樹演算法。講義第一百二十九頁有一張比較表，我們挑重點。')
+b=L('ID3 是老祖宗，只能處理類別型資料，用資訊增益挑屬性，不剪枝，也不能處理缺值。')
+c=L('C4.5 是 ID3 的升級版：連續、類別都能處理；用增益比，也就是 Gain Ratio；類別屬性可以一次分好幾支，叫多元分枝；用 C4.5 機率分裂處理缺值。')
+d=L('CART 用 Gini，而且每次只切兩邊，叫二元分枝；它也能做回歸樹，用變異數降低；缺值用代理分裂；剪枝用成本複雜度修剪。')
+e=L('作業三用的 scikit-learn 決策樹，就是 CART 的做法。所以你在程式裡設的 criterion 等於 gini、max depth 這些參數，都是 CART 的超參數。')
+E('table',x=150,y=210,ws=[260,380,450,450],head=['','ID3','C4.5','CART'],rows=[['資料型態','類別','類別＋連續','類別＋連續'],['挑屬性','資訊增益','增益比 Gain Ratio','Gini（回歸：變異數降低）'],['分枝方式','多元','類別多元、連續二元','永遠二元'],['缺值','不能處理','機率分裂','代理分裂'],['剪枝','無','基於錯誤的修剪','成本複雜度修剪']],rh=72,hh=62,fs=26,at=a,
+  cellCol=[dict(row=r,col=1,c='DIM',at=b) for r in range(5)]+[dict(row=r,col=2,c='A',at=c) for r in range(5)]+[dict(row=r,col=3,c='OK',at=d) for r in range(5)])
+E('card',x=150,y=650,w=1540,h=150,title='作業三的 scikit-learn DecisionTreeClassifier ＝ CART',ts=32,col='B',at=e,body=["criterion='gini'、max_depth… 都是 CART 的超參數"],bs=26)
+# ---------- A2 code hint
+ep.scene('a2','作業二的程式部分：把流程印出來',chapter='作業二：程式部分怎麼對應虛擬碼',desc='作業二 (d) 用程式做：每個節點印出候選屬性的 Gini／IG／Gain Ratio，選最好的再遞迴',ref='PART03 p135–136',tag='作業二 11/11',tagCol='B')
+a=L('作業二的最後一小題，要你用程式做一次。這時候，今天的虛擬碼就派上用場了。')
+b=L('你的程式其實就是 TreeGrowth：先判斷要不要停；不停的話，對每一個候選屬性算分數，挑最好的；再對每一組遞迴。')
+c=L('關鍵是在 find best split 裡面，把每個屬性的 Gini、資訊增益和增益比都印出來，這樣助教看得到你的演算流程，不是只有最後一張圖。')
+d=L('程式碼記得放在 Word 檔的附錄。')
+E('code',x=150,y=210,w=1000,h=560,title='a2_tree.py（示意）',size=24,cells=[dict(at=b,code=['def tree_growth(E, F, depth=0):','    if stopping_cond(E, F):','        return Leaf(classify(E))','    for A in F:          # 每個候選屬性','        print(A, gini(E, A), ig(E, A), gain_ratio(E, A))','    best = find_best_split(E, F)','    node = Node(best)','    for v, Ev in split(E, best):','        node.add(v, tree_growth(Ev, F, depth + 1))','    return node'])])
+E('hl',x=286,y=280+3*36-3,w=840,h=2*36+2,col='B',at=c)
+E('card',x=1210,y=210,w=560,h=260,title='對應虛擬碼',col='A',at=b,body=['stopping_cond → 葉子','find_best_split → 挑屬性','for v → 遞迴'],bs=26)
+E('card',x=1210,y=500,w=560,h=270,title='助教要看的',col='B',at=c,body=['每個節點：各屬性的','Gini／IG／Gain Ratio',dict(s='程式碼 → Word 附錄',at=d)],bs=26)
+# ---------- mistakes
+ep.scene('mistakes','常見誤區',chapter='常見誤區',desc='五張紅色警示卡',ref='PART03 p98–134')
+a=L('整理幾個常見的錯誤。')
+b=L('第一，以為 Classify 很複雜。其實就是多數決，選比例最大的那一類。')
+c=L('第二，回歸樹的葉子不是給類別，是給平均值；挑分裂看的是變異數降低，不是 Gini。')
+d=L('第三，以為決策樹也要先做標準化。不需要，因為它只是在比大小、找切點。')
+e=L('第四，以為決策樹能畫出斜的邊界。一般的決策樹只能直切、橫切。')
+f=L('第五，把 C4.5 和 CART 搞混：C4.5 用增益比、可以多元分枝；CART 用 Gini、永遠只切兩邊。')
+E('bullets',x=150,y=210,w=1620,size=30,gap=14,items=[dict(s='Classify ＝ 多數決（argmax p(i|t)）',at=b,col='BAD'),dict(s='回歸樹：葉子給平均值；分裂看變異數降低',at=c,col='BAD'),dict(s='決策樹不用標準化（只比大小、找切點）',at=d,col='BAD'),dict(s='一般決策樹只能直切、橫切，不會斜切',at=e,col='BAD'),dict(s='C4.5：增益比、多元分枝；CART：Gini、二元分枝',at=f,col='BAD')])
+# ---------- quiz
+ep.scene('quiz','小測驗',chapter='小測驗',desc='三題，倒數暫停後揭曉')
+L('來個小測驗，可以先暫停想一想。')
+q1=L('第一題：一片葉子裡有兩筆零類、五筆一類，Classify 會給它什麼標籤？',gap=3.0)
+a1=L('一類。一類的比例是七分之五，最大，多數決選一類。')
+q2=L('第二題：回歸樹用什麼來量「純不純」？',gap=3.0)
+a2=L('用變異數。分裂時，選變異數降低最多的屬性。')
+q3=L('第三題：作業三用的 scikit-learn 決策樹，是哪一種演算法？',gap=3.0)
+a3=L('CART。用 Gini，每次只切兩邊。')
+E('quiz',y=215,qs=[dict(q='Q1　葉子 (2, 5)，Classify 給什麼標籤？',a='類別 1（5/7 最大，多數決）',qi=q1,ai=a1),dict(q='Q2　回歸樹用什麼量「純不純」？',a='變異數（選變異數降低最多的）',qi=q2,ai=a2),dict(q='Q3　scikit-learn 決策樹是哪種演算法？',a='CART（Gini、二元分枝）',qi=q3,ai=a3)])
+# ---------- recap
+ep.scene('recap','重點回顧',chapter='重點回顧與下集預告',desc='回顧＋下集預告卡')
+a=L('今天的重點整理一下。')
+b=L('TreeGrowth：先問要不要停；停就做葉子、多數決；不停就找最佳分裂，對每一組遞迴。')
+c=L('停止條件除了「純了」，還有最大深度、葉子最少筆數這些超參數。')
+d=L('回歸樹的葉子給平均值，用變異數降低來挑分裂。')
+e=L('決策樹好解釋、不用標準化、會處理缺值，但只能直角切割，也容易過擬合。C4.5 用增益比，CART 用 Gini、二元分枝。')
+f=L('今天一直提到「過擬合」，到底是什麼？為什麼樹太深會背答案？下一集，我們就來好好聊這件事，還有超參數要怎麼調。我們下集見！')
+E('bullets',x=160,y=210,w=1600,size=30,gap=12,items=[dict(s='TreeGrowth：停？→ 葉子（多數決）；否 → 最佳分裂 → 遞迴',at=b),dict(s='超參數：最大深度、葉子最少筆數、最小增益',at=c),dict(s='回歸樹：葉子 ＝ 平均；變異數降低',at=d),dict(s='特性：好解釋・免標準化・缺值處理；限制：直角切割、過擬合',at=e)])
+E('card',x=160,y=720,w=1600,h=110,title='下一集 EP17：過擬合與超參數：模型背答案的問題',ts=34,col='A',align='center',at=f,fill='#11161d')
+ep.save('.')

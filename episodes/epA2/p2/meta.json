@@ -1,0 +1,23 @@
+{
+ "num": 93,
+ "title": "作業二 不純度指標（下）：貸款資料與程式實作",
+ "head": "實戰 A2（下）· 作業二 不純度指標：貸款資料與程式",
+ "summary": "作業二下集：第二份資料用講義一直在用的 10 筆貸款資料（請到 Tronclass 確認是否就是老師指定的第二份）。年收入是連續數字，先示範怎麼排序、取中點、掃描切點；再把根節點三個屬性的 Gini、資訊增益、Gain Ratio 全部算出來，看到 Gini 和資訊增益平手、Gain Ratio 改選年收入，最後長出不一樣的樹。程式部分：從零寫的 Python 程式印出每個節點的分數表，再用 scikit-learn 的 DecisionTreeClassifier 交叉檢查。畫面上的數字都是實際執行的輸出；這是方法示範，作業請自己動手做。",
+ "tags": [
+  "機器學習",
+  "決策樹",
+  "Hunt's algorithm",
+  "Gini",
+  "資訊增益",
+  "Gain Ratio",
+  "連續屬性",
+  "scikit-learn",
+  "DecisionTreeClassifier",
+  "Python",
+  "作業二",
+  "機器學習從零開始",
+  "實戰"
+ ],
+ "next": "實戰 A3 已完成（EP20）",
+ "accent": "A"
+}

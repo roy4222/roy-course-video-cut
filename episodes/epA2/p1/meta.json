@@ -1,0 +1,22 @@
+{
+ "num": 92,
+ "title": "作業二 不純度指標（上）：顧客資料用 Gini、資訊增益、Gain Ratio 長樹",
+ "head": "實戰 A2（上）· 作業二 不純度指標：顧客資料",
+ "summary": "作業二上集：不再照順序切，而是每一個節點都算分數、自己挑屬性。用講義 p136 的 20 筆顧客資料，把 Gini、Entropy、資訊增益、Split Info、Gain Ratio 先用白話講一次，再把根節點三個屬性的三種分數全部手算出來，接著處理 Family、Luxury 兩個子節點，最後得到三種指標的樹，並說明為什麼 ID 這種欄位會騙過 Gini 和資訊增益、卻騙不過 Gain Ratio。數字全部用程式驗算過；這是方法示範，作業請自己動手算。下集做第二份資料（貸款資料）與程式。",
+ "tags": [
+  "機器學習",
+  "決策樹",
+  "Hunt's algorithm",
+  "Gini",
+  "Entropy",
+  "資訊增益",
+  "Information Gain",
+  "Gain Ratio",
+  "Split Info",
+  "作業二",
+  "機器學習從零開始",
+  "實戰"
+ ],
+ "next": "實戰 A2（下）貸款資料與程式",
+ "accent": "A"
+}

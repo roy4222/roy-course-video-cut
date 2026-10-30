@@ -1,0 +1,32 @@
+[
+ {
+  "t": 148.093,
+  "text": "它們叫做「內部節點」，英文是 internal node。",
+  "heard": "他們身 他們叫做內部節點 英文是Internal Know",
+  "sim": 0.78,
+  "start_offset": -0.25,
+  "end_offset": -0.29,
+  "energy_onset": -1.0,
+  "energy_end": -0.13
+ },
+ {
+  "t": 369.919,
+  "text": "他沒有房子，已婚，年收入八萬。",
+  "heard": "",
+  "sim": 0.0,
+  "start_offset": null,
+  "end_offset": null,
+  "energy_onset": -1.0,
+  "energy_end": -0.12
+ },
+ {
+  "t": 587.474,
+  "text": "第四，注意邊界。講義寫的是小於八萬和大於八萬，那剛好等於八萬怎麼辦？",
+  "heard": "主義編借,講一些的是小魚巴好大魚巴講 is it is small fish 8碗和大魚8碗那剛好剛好等魚8碗怎麼辦",
+  "sim": 0.32,
+  "start_offset": 0.52,
+  "end_offset": -0.2,
+  "energy_onset": -1.0,
+  "energy_end": -0.13
+ }
+]

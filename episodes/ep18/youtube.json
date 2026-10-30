@@ -1,0 +1,20 @@
+{
+ "title": "機器學習從零開始 EP18｜交叉驗證：Holdout、K-fold、Nested CV",
+ "description": "只切一次驗證集，結果可能看運氣。這一集用「模擬考輪流當考官」打比方，介紹 Holdout、K-fold、重複與分層 CV，實際用 3-fold CV 比較 max_depth＝2、5、20，再說明為什麼要用 Nested CV、Public／Private test，以及交叉驗證下怎麼畫 ROC，最後把作業三指定的兩種流程畫清楚。\n\n章節\n0:00 開場\n0:25 開場：一次模擬考準嗎？\n1:14 驗證誤差與選擇偏誤\n2:03 Holdout 保留法與重複 Holdout\n3:02 K-fold 交叉驗證：10 筆資料的 5-fold\n4:26 重複 CV 與分層 CV\n5:29 例題：用 3-fold CV 選 max_depth\n6:51 一般 CV 為什麼不夠\n8:06 Nested CV：內圈選、外圈評\n9:24 從 Nested CV 到最終模型\n10:26 Public／Private test（Kaggle 公開榜與私榜）\n11:48 交叉驗證下的 ROC–AUC\n13:24 作業三：holdout＋holdout 與 holdout＋CV\n14:52 常見誤區\n15:47 小測驗\n16:45 重點回顧與下集預告\n\n「機器學習從零開始」是一套給完全新手的機器學習補習影片，內容依照大學「機器學習」課程講義整理，用白話、生活例子和手算例題，一步一步帶你看懂。\n旁白為 AI 合成語音，畫面為程式生成的圖解（無 AI 生成影像）。",
+ "tags": [
+  "機器學習",
+  "交叉驗證",
+  "cross-validation",
+  "K-fold",
+  "Holdout",
+  "Nested CV",
+  "超參數",
+  "機器學習從零開始",
+  "作業三"
+ ],
+ "synthetic": true,
+ "language": "zh-TW",
+ "category": "Education",
+ "video_file": "ep18.mp4",
+ "captions_file": "ep18.srt"
+}

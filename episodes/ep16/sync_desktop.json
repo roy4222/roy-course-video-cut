@@ -1,0 +1,47 @@
+{
+ "sync": [
+  {
+   "t": 258.613,
+   "text": "什麼時候該停？最自然的有兩種情況。",
+   "heard": "什麼時候該停? 最自然的有兩種情況。第一。",
+   "similarity": 0.94,
+   "start_offset_s": -1.0
+  },
+  {
+   "t": 635.269,
+   "text": "第一種，交互作用。有些屬性單獨看沒什麼用，合起來才有用。就像鹽和檸檬，單獨吃都不好吃，一起加在魚上就很對味。",
+   "heard": "第一種 交互作用 有些屬性單獨看沒什麼用 合起來纔有用就像鹽和檸檬 單獨喫都不好喫 一起加在魚上就很對味",
+   "similarity": 0.94,
+   "start_offset_s": -0.36
+  },
+  {
+   "t": 1019.312,
+   "text": "作業三用的 scikit-learn 決策樹，就是 CART 的做法。所以你在程式裡設的 criterion 等於 gini、max depth 這些參數，都是 CART 的超參數。",
+   "heard": "搜檢。 作業3用的SikitLearn決策數就是Card的做法。所以你在城市裡設的criterion等於基尼,MaxDef這些參數都是Card的超參數。",
+   "similarity": 0.72,
+   "start_offset_s": -1.0
+  }
+ ],
+ "probe": {
+  "programs": [],
+  "stream_groups": [],
+  "streams": [
+   {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "30/1",
+    "side_data_list": [
+     {}
+    ]
+   },
+   {
+    "codec_name": "aac",
+    "r_frame_rate": "0/0"
+   }
+  ],
+  "format": {
+   "duration": "1272.066667"
+  }
+ }
+}

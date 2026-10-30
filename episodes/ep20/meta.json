@@ -1,0 +1,24 @@
+{
+ "num": 20,
+ "title": "作業三實戰：用 CART 做 Titanic，從 EDA 到 ROC",
+ "head": "",
+ "summary": "作業三一步一步帶你跑一次：用 seaborn 內建的鐵達尼號資料（891 筆），從變數定義、單變量與雙變量 EDA、找出會洩漏答案的欄位、先切分再前處理，到用 scikit-learn 的 DecisionTreeClassifier 調 max_depth 與 min_samples_leaf 各 3 個值，比較 holdout＋holdout 與 holdout＋3-fold CV，最後用 ACC、敏感度、特異度、ROC 與 AUC 報告結果，並比較前處理前後的差異。畫面中的數字都是實際執行的輸出；這是方法示範，不是作業答案，各組的資料與隨機種子會不同。",
+ "tags": [
+  "機器學習",
+  "決策樹",
+  "CART",
+  "Titanic",
+  "鐵達尼號",
+  "scikit-learn",
+  "DecisionTreeClassifier",
+  "EDA",
+  "資料前處理",
+  "交叉驗證",
+  "ROC",
+  "AUC",
+  "機器學習從零開始",
+  "作業三"
+ ],
+ "next": "第四部預告",
+ "accent": "A"
+}

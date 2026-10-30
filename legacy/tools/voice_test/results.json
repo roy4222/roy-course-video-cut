@@ -1,0 +1,95 @@
+{
+ "mai-voice-2.1_zh-CN-Mei": {
+  "model": "microsoft/mai-voice-2.1",
+  "voice": "zh-CN-Mei:MAI-Voice-2.1",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/mpeg",
+  "gen_id": "gen-tts-1793320360-wD52vcblrBzCcpVXcfW3",
+  "cost": 0.00352,
+  "provider": "Azure",
+  "file": "mai-voice-2.1_zh-CN-Mei.mp3"
+ },
+ "mai-voice-2.1_zh-CN-Lan": {
+  "model": "microsoft/mai-voice-2.1",
+  "voice": "zh-CN-Lan:MAI-Voice-2.1",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/mpeg",
+  "gen_id": "gen-tts-1793320382-dl0xiy9ceWirtPLfqo0H",
+  "cost": 0.00352,
+  "provider": "Azure",
+  "file": "mai-voice-2.1_zh-CN-Lan.mp3"
+ },
+ "mai-voice-2.1_zh-CN-Bo": {
+  "model": "microsoft/mai-voice-2.1",
+  "voice": "zh-CN-Bo:MAI-Voice-2.1",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/mpeg",
+  "gen_id": "gen-tts-1793320393-vQYBKucEBBjJLR3gD3sA",
+  "cost": 0.00352,
+  "provider": "Azure",
+  "file": "mai-voice-2.1_zh-CN-Bo.mp3"
+ },
+ "gemini-3.8-flash-tts_Sulafat": {
+  "model": "google/gemini-3.8-flash-tts",
+  "voice": "Sulafat",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/pcm;rate=24000;channels=1",
+  "gen_id": "gen-tts-1793320405-IYNS6NbZTfeFdOCLhuFr",
+  "cost": 0.0088875,
+  "provider": "Google",
+  "file": "gemini-3.8-flash-tts_Sulafat.mp3"
+ },
+ "gemini-3.8-flash-tts_Kore": {
+  "model": "google/gemini-3.8-flash-tts",
+  "voice": "Kore",
+  "instructions": true,
+  "status": 429,
+  "ctype": "application/json",
+  "error": "{\"error\":{\"message\":\"Provider returned 429\",\"code\":429}}"
+ },
+ "eleven-v4_alice": {
+  "model": "elevenlabs/eleven-v4",
+  "voice": "alice",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/mpeg",
+  "gen_id": "gen-tts-1793320428-Oo8ZKTmWHYQiT3n6hXvV",
+  "cost": 0.0128,
+  "provider": "ElevenLabs",
+  "file": "eleven-v4_alice.mp3"
+ },
+ "qwen-audio-3.0-tts-plus_longanlingxin": {
+  "model": "qwen/qwen-audio-3.0-tts-plus",
+  "voice": "longanlingxin",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/mpeg",
+  "gen_id": "gen-tts-1793320443-ZWZSKaQVq72oAHjaVSZy",
+  "cost": 0.00574,
+  "provider": "Alibaba",
+  "file": "qwen-audio-3.0-tts-plus_longanlingxin.mp3"
+ },
+ "qwen-audio-3.0-tts-plus_longanlufeng": {
+  "model": "qwen/qwen-audio-3.0-tts-plus",
+  "voice": "longanlufeng",
+  "instructions": true,
+  "status": 200,
+  "ctype": "audio/mpeg",
+  "gen_id": "gen-tts-1793320460-cB3CPtn1v2kHaxXRuyFp",
+  "cost": 0.00574,
+  "provider": "Alibaba",
+  "file": "qwen-audio-3.0-tts-plus_longanlufeng.mp3"
+ },
+ "gemini-3.8-flash-tts_Enceladus": {
+  "model": "google/gemini-3.8-flash-tts",
+  "voice": "Enceladus",
+  "instructions": true,
+  "status": 429,
+  "ctype": "application/json",
+  "error": "{\"error\":{\"message\":\"Provider returned 429\",\"code\":429}}"
+ }
+}

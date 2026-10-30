@@ -1,0 +1,20 @@
+{
+ "title": "機器學習從零開始 EP09｜距離、相似度與 Entropy：歐氏距離、Cosine、Jaccard 手算",
+ "description": "兩筆資料「有多像」要怎麼算？這集從相似度與相異度開始，手算歐氏距離、曼哈頓距離與 Minkowski 距離，再介紹 SMC、Jaccard、Cosine 相似度與相關係數。\n最後用擲硬幣和講義的髮色例子算 Entropy（答案 1.154），介紹相互資訊，並整理怎麼為不同資料挑選合適的量測方式。這是之後 KNN 和決策樹的地基。\n\n章節\n0:00 開場\n0:24 相似度 vs 相異度\n1:18 歐氏距離\n2:40 曼哈頓與 Minkowski 距離\n4:02 SMC 與 Jaccard\n5:31 Cosine 相似度\n6:50 相關係數\n7:56 Entropy 是什麼\n9:00 例題：髮色 Entropy\n10:15 相互資訊\n12:17 怎麼選量測方式\n13:29 常見誤會\n14:02 小測驗\n15:11 重點回顧\n\n「機器學習從零開始」系列：為完全新手設計的機器學習補習影片，依大學「機器學習」課程講義逐集整理。旁白為 AI 合成語音，畫面為程式繪製的圖解動畫。",
+ "tags": [
+  "機器學習",
+  "歐氏距離",
+  "曼哈頓距離",
+  "Cosine similarity",
+  "Jaccard",
+  "相關係數",
+  "Entropy",
+  "熵",
+  "相互資訊",
+  "繁體中文"
+ ],
+ "synthetic": true,
+ "language": "zh-TW",
+ "video_file": "ep09.mp4",
+ "captions_file": "ep09.srt"
+}

@@ -1,0 +1,137 @@
+==============================================================================
+Hunt's algorithm  |  attribute order: Gender -> Car Type -> Shirt Size  |  multi-way split
+Counts are shown as (C0, C1)
+============================================================================== 
+
+[Step  1] depth=0  node: root
+          records: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20   n=20   counts (C0,C1)=(10,10)
+          -> SPLIT on Gender: mixed classes -> split on 'Gender' (multi-way)
+               - Gender=M: IDs[1,2,3,4,5,6,11,12,13,14] (6,4)
+               - Gender=F: IDs[7,8,9,10,15,16,17,18,19,20] (4,6)
+
+[Step  2] depth=1  node: root > Gender=M
+          records: 1,2,3,4,5,6,11,12,13,14   n=10   counts (C0,C1)=(6,4)
+          -> SPLIT on Car Type: mixed classes -> split on 'Car Type' (multi-way)
+               - Car Type=Family: IDs[1,11,12,13] (1,3)
+               - Car Type=Sports: IDs[2,3,4,5,6] (5,0)
+               - Car Type=Luxury: IDs[14] (0,1)
+
+[Step  3] depth=2  node: root > Gender=M > Car Type=Family
+          records: 1,11,12,13   n=4   counts (C0,C1)=(1,3)
+          -> SPLIT on Shirt Size: mixed classes -> split on 'Shirt Size' (multi-way)
+               - Shirt Size=Small: IDs[1] (1,0)
+               - Shirt Size=Medium: IDs[13] (0,1)
+               - Shirt Size=Large: IDs[11] (0,1)
+               - Shirt Size=Extra Large: IDs[12] (0,1)
+
+[Step  4] depth=3  node: root > Gender=M > Car Type=Family > Shirt Size=Small
+          records: 1   n=1   counts (C0,C1)=(1,0)
+          -> LEAF, class = C0  (pure node (all records are C0))
+
+[Step  5] depth=3  node: root > Gender=M > Car Type=Family > Shirt Size=Medium
+          records: 13   n=1   counts (C0,C1)=(0,1)
+          -> LEAF, class = C1  (pure node (all records are C1))
+
+[Step  6] depth=3  node: root > Gender=M > Car Type=Family > Shirt Size=Large
+          records: 11   n=1   counts (C0,C1)=(0,1)
+          -> LEAF, class = C1  (pure node (all records are C1))
+
+[Step  7] depth=3  node: root > Gender=M > Car Type=Family > Shirt Size=Extra Large
+          records: 12   n=1   counts (C0,C1)=(0,1)
+          -> LEAF, class = C1  (pure node (all records are C1))
+
+[Step  8] depth=2  node: root > Gender=M > Car Type=Sports
+          records: 2,3,4,5,6   n=5   counts (C0,C1)=(5,0)
+          -> LEAF, class = C0  (pure node (all records are C0))
+
+[Step  9] depth=2  node: root > Gender=M > Car Type=Luxury
+          records: 14   n=1   counts (C0,C1)=(0,1)
+          -> LEAF, class = C1  (pure node (all records are C1))
+
+[Step 10] depth=1  node: root > Gender=F
+          records: 7,8,9,10,15,16,17,18,19,20   n=10   counts (C0,C1)=(4,6)
+          -> SPLIT on Car Type: mixed classes -> split on 'Car Type' (multi-way)
+               - Car Type=Family: IDs[-] (0,0)
+               - Car Type=Sports: IDs[7,8,9] (3,0)
+               - Car Type=Luxury: IDs[10,15,16,17,18,19,20] (1,6)
+
+[Step 11] depth=2  node: root > Gender=F > Car Type=Family
+          records: (none)   n=0   counts (C0,C1)=(0,0)
+          -> LEAF, class = C1  (empty node -> label with parent's majority class (C1))
+
+[Step 12] depth=2  node: root > Gender=F > Car Type=Sports
+          records: 7,8,9   n=3   counts (C0,C1)=(3,0)
+          -> LEAF, class = C0  (pure node (all records are C0))
+
+[Step 13] depth=2  node: root > Gender=F > Car Type=Luxury
+          records: 10,15,16,17,18,19,20   n=7   counts (C0,C1)=(1,6)
+          -> SPLIT on Shirt Size: mixed classes -> split on 'Shirt Size' (multi-way)
+               - Shirt Size=Small: IDs[15,16] (0,2)
+               - Shirt Size=Medium: IDs[17,18,19] (0,3)
+               - Shirt Size=Large: IDs[10,20] (1,1)
+               - Shirt Size=Extra Large: IDs[-] (0,0)
+
+[Step 14] depth=3  node: root > Gender=F > Car Type=Luxury > Shirt Size=Small
+          records: 15,16   n=2   counts (C0,C1)=(0,2)
+          -> LEAF, class = C1  (pure node (all records are C1))
+
+[Step 15] depth=3  node: root > Gender=F > Car Type=Luxury > Shirt Size=Medium
+          records: 17,18,19   n=3   counts (C0,C1)=(0,3)
+          -> LEAF, class = C1  (pure node (all records are C1))
+
+[Step 16] depth=3  node: root > Gender=F > Car Type=Luxury > Shirt Size=Large
+          records: 10,20   n=2   counts (C0,C1)=(1,1)
+          -> LEAF, class = C1  (no attribute left (records have identical attribute values); class tie (1,1) -> parent's majority (C1))
+
+[Step 17] depth=3  node: root > Gender=F > Car Type=Luxury > Shirt Size=Extra Large
+          records: (none)   n=0   counts (C0,C1)=(0,0)
+          -> LEAF, class = C1  (empty node -> label with parent's majority class (C1))
+
+==============================================================================
+Final decision tree
+==============================================================================
+[Gender] (10,10)
+    Gender=M: [Car Type] (6,4)
+        Car Type=Family: [Shirt Size] (1,3)
+            Shirt Size=Small: Class = C0 (1,0)
+            Shirt Size=Medium: Class = C1 (0,1)
+            Shirt Size=Large: Class = C1 (0,1)
+            Shirt Size=Extra Large: Class = C1 (0,1)
+        Car Type=Sports: Class = C0 (5,0)
+        Car Type=Luxury: Class = C1 (0,1)
+    Gender=F: [Car Type] (4,6)
+        Car Type=Family: Class = C1 (0,0)  *empty
+        Car Type=Sports: Class = C0 (3,0)
+        Car Type=Luxury: [Shirt Size] (1,6)
+            Shirt Size=Small: Class = C1 (0,2)
+            Shirt Size=Medium: Class = C1 (0,3)
+            Shirt Size=Large: Class = C1 (1,1)
+            Shirt Size=Extra Large: Class = C1 (0,0)  *empty 
+
+==============================================================================
+Decision rules (IF-THEN)
+==============================================================================
+R01: IF Gender = M AND Car Type = Family AND Shirt Size = Small THEN Class = C0   (1,0)
+R02: IF Gender = M AND Car Type = Family AND Shirt Size = Medium THEN Class = C1   (0,1)
+R03: IF Gender = M AND Car Type = Family AND Shirt Size = Large THEN Class = C1   (0,1)
+R04: IF Gender = M AND Car Type = Family AND Shirt Size = Extra Large THEN Class = C1   (0,1)
+R05: IF Gender = M AND Car Type = Sports THEN Class = C0   (5,0)
+R06: IF Gender = M AND Car Type = Luxury THEN Class = C1   (0,1)
+R07: IF Gender = F AND Car Type = Family THEN Class = C1   (0,0)
+R08: IF Gender = F AND Car Type = Sports THEN Class = C0   (3,0)
+R09: IF Gender = F AND Car Type = Luxury AND Shirt Size = Small THEN Class = C1   (0,2)
+R10: IF Gender = F AND Car Type = Luxury AND Shirt Size = Medium THEN Class = C1   (0,3)
+R11: IF Gender = F AND Car Type = Luxury AND Shirt Size = Large THEN Class = C1   (1,1)
+R12: IF Gender = F AND Car Type = Luxury AND Shirt Size = Extra Large THEN Class = C1   (0,0)
+
+==============================================================================
+Training accuracy: 19/20 = 95.00%
+  misclassified: ID 10 (F, Luxury, Large) actual=C0 predicted=C1
+============================================================================== 
+
+Saved: /workspace/video_style/epA1/hw/hunts_steps.csv
+Saved: /workspace/video_style/epA1/hw/hunts_predictions.csv
+Saved: /workspace/video_style/epA1/hw/tree_step_a.png
+Saved: /workspace/video_style/epA1/hw/tree_step_b.png
+Saved: /workspace/video_style/epA1/hw/tree_step_c.png
+Saved: /workspace/video_style/epA1/hw/tree_final.png

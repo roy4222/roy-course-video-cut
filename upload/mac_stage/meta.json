@@ -1,0 +1,122 @@
+{
+ "00": {
+  "title": "機器學習從零開始 EP00｜開課導覽：這門課學什麼、資料科學有哪些工作？",
+  "tags": "機器學習,Machine Learning,資料科學,資料科學家,資料工程師,MLOps,ML Engineer,課程導覽,機器學習入門,繁體中文",
+  "file": "ep00.mp4"
+ },
+ "01": {
+  "title": "機器學習從零開始 EP01｜機器學習到底是什麼？從垃圾信學會第一個模型",
+  "tags": "機器學習,Machine Learning,機器學習入門,監督式學習,分類,回歸,訓練集,測試集,特徵,繁體中文",
+  "file": "ep01_enceladus.mp4"
+ },
+ "02": {
+  "title": "機器學習從零開始 EP02｜AI、ML、DL 到底什麼關係？資料探勘與 KDD 一次看懂",
+  "tags": "機器學習,人工智慧,深度學習,資料探勘,KDD,AI ML DL 差別,神經網路,大型語言模型,機器學習入門,繁體中文",
+  "file": "ep02.mp4"
+ },
+ "03": {
+  "title": "機器學習從零開始 EP03｜學習方式全圖鑑：監督、非監督、強化、半監督、自監督",
+  "tags": "機器學習,監督式學習,非監督式學習,強化學習,半監督學習,自監督學習,Self-supervised,Teacher Student,機器學習入門,繁體中文",
+  "file": "ep03.mp4"
+ },
+ "04": {
+  "title": "機器學習從零開始 EP04｜演算法地圖：預測 vs 描述、鑑別式 AI vs 生成式 AI",
+  "tags": "機器學習,演算法,生成式AI,鑑別式AI,Generative AI,Discriminative AI,決策樹,SVM,機器學習入門,繁體中文",
+  "file": "ep04.mp4"
+ },
+ "05": {
+  "title": "機器學習從零開始 EP05｜資料長什麼樣？屬性、四種量尺與資料集類型",
+  "tags": "機器學習,資料前處理,資料型態,名目尺度,順序尺度,區間尺度,比率尺度,屬性,時間序列,繁體中文",
+  "file": "ep05.mp4"
+ },
+ "06": {
+  "title": "機器學習從零開始 EP06｜先看清楚資料：EDA 探索式分析與資料品質",
+  "tags": "機器學習,EDA,探索式資料分析,資料品質,離群值,缺值,類別不平衡,資料洩漏,Garbage in garbage out,繁體中文",
+  "file": "ep06.mp4"
+ },
+ "07": {
+  "title": "機器學習從零開始 EP07｜資料前處理：編碼、標準化、抽樣、分箱與資料洩漏",
+  "tags": "機器學習,資料前處理,One-hot encoding,標準化,正規化,分箱,抽樣,資料洩漏,Titanic,繁體中文",
+  "file": "ep07.mp4"
+ },
+ "08": {
+  "title": "機器學習從零開始 EP08｜特徵工程：降維、特徵選擇（Filter／Wrapper／Embedded）與特徵建立",
+  "tags": "機器學習,特徵工程,特徵選擇,降維,PCA,維度詛咒,Filter Wrapper Embedded,LASSO,傅立葉轉換,繁體中文",
+  "file": "ep08.mp4"
+ },
+ "13": {
+  "title": "機器學習從零開始 EP13｜決策樹是什麼？像玩「猜猜我是誰」",
+  "tags": "機器學習,決策樹,decision tree,根節點,葉節點,分類,機器學習從零開始,Hunt演算法前置",
+  "file": "ep13.mp4"
+ },
+ "15": {
+  "title": "機器學習從零開始 EP15｜怎麼挑最好的切法：Gini、Entropy、資訊增益、Gain Ratio",
+  "tags": "機器學習,決策樹,Gini,Entropy,資訊增益,Information Gain,Gain Ratio,作業二,機器學習從零開始",
+  "file": "ep15.mp4"
+ },
+ "18": {
+  "title": "機器學習從零開始 EP18｜交叉驗證：Holdout、K-fold、Nested CV",
+  "tags": "機器學習,交叉驗證,cross-validation,K-fold,Holdout,Nested CV,超參數,機器學習從零開始,作業三",
+  "file": "ep18.mp4"
+ },
+ "20": {
+  "title": "機器學習從零開始 EP20｜作業三實戰：用 CART 做 Titanic，從 EDA 到 ROC",
+  "tags": "機器學習,決策樹,CART,Titanic,鐵達尼號,scikit-learn,DecisionTreeClassifier,EDA,資料前處理,交叉驗證,ROC,AUC,機器學習從零開始,作業三",
+  "file": "ep20.mp4"
+ },
+ "09": {
+  "title": "機器學習從零開始 EP09｜距離、相似度與 Entropy：歐氏距離、Cosine、Jaccard 手算",
+  "tags": "機器學習,歐氏距離,曼哈頓距離,Cosine similarity,Jaccard,相關係數,Entropy,熵,相互資訊,機器學習從零開始,繁體中文",
+  "file": "ep09.mp4"
+ },
+ "10": {
+  "title": "機器學習從零開始 EP10｜分類問題的基本框架：x、y、模型、歸納與演繹",
+  "tags": "機器學習,監督式學習,分類,Classification,二元分類,多元分類,歸納,演繹,泛化,機器學習從零開始,繁體中文",
+  "file": "ep10.mp4"
+ },
+ "11": {
+  "title": "機器學習從零開始 EP11｜模型準不準（上）：混淆矩陣與八個指標",
+  "tags": "機器學習,混淆矩陣,confusion matrix,準確率,Recall,Precision,F1,機器學習從零開始,作業三",
+  "file": "ep11.mp4"
+ },
+ "12": {
+  "title": "機器學習從零開始 EP12｜模型準不準（下）：ROC、AUC 與門檻選擇",
+  "tags": "機器學習,ROC,AUC,門檻,threshold,Youden,敏感度,特異度,機器學習從零開始,作業三",
+  "file": "ep12.mp4"
+ },
+ "14": {
+  "title": "機器學習從零開始 EP14｜Hunt's 演算法：一步步長出決策樹",
+  "tags": "機器學習,決策樹,Hunt演算法,Hunt's algorithm,遞迴,作業一,機器學習從零開始",
+  "file": "ep14.mp4"
+ },
+ "16": {
+  "title": "機器學習從零開始 EP16｜決策樹全貌：演算法流程、回歸樹、C4.5 vs CART",
+  "tags": "機器學習,決策樹,CART,C4.5,回歸樹,虛擬碼,缺值,機器學習從零開始,作業二,作業三",
+  "file": "ep16.mp4"
+ },
+ "17": {
+  "title": "機器學習從零開始 EP17｜過擬合與超參數：模型背答案的問題",
+  "tags": "機器學習,過擬合,overfitting,欠擬合,超參數,hyperparameter,驗證集,泛化誤差,機器學習從零開始,作業三",
+  "file": "ep17.mp4"
+ },
+ "19": {
+  "title": "機器學習從零開始 EP19｜模型複雜度與剪枝：REP、PEP、CCP",
+  "tags": "機器學習,決策樹,剪枝,pruning,CCP,ccp_alpha,REP,PEP,Occam 剃刀,SMOTE,類別不平衡,機器學習從零開始,作業三",
+  "file": "ep19.mp4"
+ },
+ "A1": {
+  "title": "機器學習從零開始 實戰 A1｜作業一 Hunt's 決策樹手算全流程",
+  "tags": "機器學習,決策樹,Hunt's algorithm,Hunt演算法,手算,作業一,多路分割,空節點,機器學習從零開始,實戰",
+  "file": "epA1.mp4"
+ },
+ "A2_1": {
+  "title": "機器學習從零開始 實戰 A2（上）｜作業二 不純度指標：顧客資料 Gini、資訊增益、Gain Ratio",
+  "tags": "機器學習,決策樹,Hunt's algorithm,Gini,Entropy,資訊增益,Information Gain,Gain Ratio,Split Info,作業二,機器學習從零開始,實戰",
+  "file": "epA2_1.mp4"
+ },
+ "A2_2": {
+  "title": "機器學習從零開始 實戰 A2（下）｜作業二 不純度指標：貸款資料與 Python／scikit-learn",
+  "tags": "機器學習,決策樹,Hunt's algorithm,Gini,資訊增益,Gain Ratio,連續屬性,scikit-learn,DecisionTreeClassifier,Python,作業二,機器學習從零開始,實戰",
+  "file": "epA2_2.mp4"
+ }
+}

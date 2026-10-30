@@ -1,0 +1,162 @@
+{
+ "06": {
+  "script": {
+   "lines": 75,
+   "chars": 2720
+  },
+  "updated": "2026-10-30 11:37",
+  "tts": {
+   "cost": 0.1839,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 765.21
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.1",
+   "duration": 765.2,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.89
+  },
+  "yt": true,
+  "drive": {
+   "folder": "1yaNrVGkMXJyLcVPU8FNH0313-FsL2PVg",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 12:50"
+  }
+ },
+ "07": {
+  "script": {
+   "lines": 82,
+   "chars": 3155
+  },
+  "updated": "2026-10-30 12:03",
+  "tts": {
+   "cost": 0.2013,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 886.56
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.0",
+   "duration": 886.57,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.88
+  },
+  "yt": true,
+  "drive": {
+   "folder": "1yaNrVGkMXJyLcVPU8FNH0313-FsL2PVg",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 12:50"
+  }
+ },
+ "08": {
+  "script": {
+   "lines": 69,
+   "chars": 2514
+  },
+  "updated": "2026-10-30 12:36",
+  "tts": {
+   "cost": 0.3044,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 682.75
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.2",
+   "duration": 682.77,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.81
+  },
+  "yt": true,
+  "drive": {
+   "folder": "1yaNrVGkMXJyLcVPU8FNH0313-FsL2PVg",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 12:50"
+  }
+ },
+ "09": {
+  "script": {
+   "lines": 86,
+   "chars": 3745
+  },
+  "updated": "2026-10-30 17:21",
+  "tts": {
+   "cost": 0.2143,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 974.11
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.1",
+   "duration": 974.1,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.78
+  },
+  "yt": true,
+  "drive": {
+   "folder": "1yaNrVGkMXJyLcVPU8FNH0313-FsL2PVg",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 17:45"
+  }
+ },
+ "10": {
+  "script": {
+   "lines": 69,
+   "chars": 2333
+  },
+  "updated": "2026-10-30 18:01",
+  "tts": {
+   "cost": 0.1399,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 656.18
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.1",
+   "duration": 656.17,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.83
+  },
+  "yt": true,
+  "drive": {
+   "folder": "1yaNrVGkMXJyLcVPU8FNH0313-FsL2PVg",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 18:16"
+  }
+ }
+}

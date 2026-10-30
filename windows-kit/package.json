@@ -1,0 +1,11 @@
+{
+  "name": "ml-video-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ML tutoring-video pipeline: HTML canvas scenes -> headless Chromium -> ffmpeg",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "playwright-core": "1.63.0"
+  }
+}

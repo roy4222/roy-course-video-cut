@@ -1,0 +1,3 @@
+# Optional: run faster-whisper on an NVIDIA GPU (setup.ps1 -Cuda / setup.sh --cuda). Needs a recent NVIDIA driver.
+nvidia-cublas-cu12
+nvidia-cudnn-cu12>=9,<10

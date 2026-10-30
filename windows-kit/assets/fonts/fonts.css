@@ -1,0 +1,6 @@
+/* Bundled fonts so frames look identical on Windows / Linux / macOS (no system font dependency).
+   Noto Sans CJK TC (SIL OFL 1.1) and DejaVu Sans Mono (Bitstream Vera / public-domain changes). */
+@font-face{font-family:"Noto Sans CJK TC";font-weight:100 500;font-style:normal;font-display:block;src:url(NotoSansCJKtc-Regular.woff2) format("woff2");}
+@font-face{font-family:"Noto Sans CJK TC";font-weight:600 900;font-style:normal;font-display:block;src:url(NotoSansCJKtc-Bold.woff2) format("woff2");}
+@font-face{font-family:"DejaVu Sans Mono";font-weight:100 500;font-style:normal;font-display:block;src:url(DejaVuSansMono-Regular.woff2) format("woff2");}
+@font-face{font-family:"DejaVu Sans Mono";font-weight:600 900;font-style:normal;font-display:block;src:url(DejaVuSansMono-Bold.woff2) format("woff2");}

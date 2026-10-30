@@ -1,0 +1,242 @@
+[
+ {
+  "episode": "EP00",
+  "title": "機器學習從零開始 EP00｜開課導覽：這門課學什麼、資料科學有哪些工作？",
+  "video_id": "REDACTED-EP00",
+  "url": "https://youtu.be/REDACTED-EP00",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP01",
+  "title": "機器學習從零開始 EP01｜機器學習到底是什麼？從垃圾信學會第一個模型",
+  "video_id": "REDACTED-EP01",
+  "url": "https://youtu.be/REDACTED-EP01",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP02",
+  "title": "機器學習從零開始 EP02｜AI、ML、DL 到底什麼關係？資料探勘與 KDD 一次看懂",
+  "video_id": "REDACTED-EP02",
+  "url": "https://youtu.be/REDACTED-EP02",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP03",
+  "title": "機器學習從零開始 EP03｜學習方式全圖鑑：監督、非監督、強化、半監督、自監督",
+  "video_id": "REDACTED-EP03",
+  "url": "https://youtu.be/REDACTED-EP03",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP04",
+  "title": "機器學習從零開始 EP04｜演算法地圖：預測 vs 描述、鑑別式 AI vs 生成式 AI",
+  "video_id": "REDACTED-EP04",
+  "url": "https://youtu.be/REDACTED-EP04",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP05",
+  "title": "機器學習從零開始 EP05｜資料長什麼樣？屬性、四種量尺與資料集類型",
+  "video_id": "REDACTED-EP05",
+  "url": "https://youtu.be/REDACTED-EP05",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP06",
+  "title": "機器學習從零開始 EP06｜先看清楚資料：EDA 探索式分析與資料品質",
+  "video_id": "REDACTED-EP06",
+  "url": "https://youtu.be/REDACTED-EP06",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP07",
+  "title": "機器學習從零開始 EP07｜資料前處理：編碼、標準化、抽樣、分箱與資料洩漏",
+  "video_id": "REDACTED-EP07",
+  "url": "https://youtu.be/REDACTED-EP07",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP08",
+  "title": "機器學習從零開始 EP08｜特徵工程：降維、特徵選擇（Filter／Wrapper／Embedded）與特徵建立",
+  "video_id": "REDACTED-EP08",
+  "url": "https://youtu.be/REDACTED-EP08",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP13",
+  "title": "機器學習從零開始 EP13｜決策樹是什麼？像玩「猜猜我是誰」",
+  "video_id": "REDACTED-EP13",
+  "url": "https://youtu.be/REDACTED-EP13",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP15",
+  "title": "機器學習從零開始 EP15｜怎麼挑最好的切法：Gini、Entropy、資訊增益、Gain Ratio",
+  "video_id": "REDACTED-EP15",
+  "url": "https://youtu.be/REDACTED-EP15",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP18",
+  "title": "機器學習從零開始 EP18｜交叉驗證：Holdout、K-fold、Nested CV",
+  "video_id": "REDACTED-EP18",
+  "url": "https://youtu.be/REDACTED-EP18",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP20",
+  "title": "機器學習從零開始 EP20｜作業三實戰：用 CART 做 Titanic，從 EDA 到 ROC",
+  "video_id": "REDACTED-EP20",
+  "url": "https://youtu.be/REDACTED-EP20",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP09",
+  "title": "機器學習從零開始 EP09｜距離、相似度與 Entropy：歐氏距離、Cosine、Jaccard 手算",
+  "video_id": "REDACTED-EP09",
+  "url": "https://youtu.be/REDACTED-EP09",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP10",
+  "title": "機器學習從零開始 EP10｜分類問題的基本框架：x、y、模型、歸納與演繹",
+  "video_id": "REDACTED-EP10",
+  "url": "https://youtu.be/REDACTED-EP10",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP11",
+  "title": "機器學習從零開始 EP11｜模型準不準（上）：混淆矩陣與八個指標",
+  "video_id": "REDACTED-EP11",
+  "url": "https://youtu.be/REDACTED-EP11",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP12",
+  "title": "機器學習從零開始 EP12｜模型準不準（下）：ROC、AUC 與門檻選擇",
+  "video_id": "REDACTED-EP12",
+  "url": "https://youtu.be/REDACTED-EP12",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP14",
+  "title": "機器學習從零開始 EP14｜Hunt's 演算法：一步步長出決策樹",
+  "video_id": "REDACTED-EP14",
+  "url": "https://youtu.be/REDACTED-EP14",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP16",
+  "title": "機器學習從零開始 EP16｜決策樹全貌：演算法流程、回歸樹、C4.5 vs CART",
+  "video_id": "REDACTED-EP16",
+  "url": "https://youtu.be/REDACTED-EP16",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP17",
+  "title": "機器學習從零開始 EP17｜過擬合與超參數：模型背答案的問題",
+  "video_id": "REDACTED-EP17",
+  "url": "https://youtu.be/REDACTED-EP17",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "EP19",
+  "title": "機器學習從零開始 EP19｜模型複雜度與剪枝：REP、PEP、CCP",
+  "video_id": "REDACTED-EP19",
+  "url": "https://youtu.be/REDACTED-EP19",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "A1",
+  "title": "機器學習從零開始 實戰 A1｜作業一 Hunt's 決策樹手算全流程",
+  "video_id": "REDACTED-A1",
+  "url": "https://youtu.be/REDACTED-A1",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "A2_1",
+  "title": "機器學習從零開始 實戰 A2（上）｜作業二 不純度指標：顧客資料 Gini、資訊增益、Gain Ratio",
+  "video_id": "REDACTED-A2_1",
+  "url": "https://youtu.be/REDACTED-A2_1",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ },
+ {
+  "episode": "A2_2",
+  "title": "機器學習從零開始 實戰 A2（下）｜作業二 不純度指標：貸款資料與 Python／scikit-learn",
+  "video_id": "REDACTED-A2_2",
+  "url": "https://youtu.be/REDACTED-A2_2",
+  "status": "uploaded",
+  "visibility": "private",
+  "machine": "<mac-hostname>",
+  "uploaded_at": "2026-10-30 (Asia/Taipei)"
+ }
+]

@@ -1,0 +1,22 @@
+{
+"scene:title__0": 0.006178,
+"scene:hook__0": 0.0079935,
+"scene:complexity__0": 0.0099945,
+"scene:select__0": 0.01363,
+"scene:occam__0": 0.0143775,
+"scene:penalty__0": 0.018586,
+"scene:alpha05__0": 0.011282,
+"scene:stat__0": 0.016263,
+"scene:pre__0": 0.016994,
+"scene:post__0": 0.0204535,
+"scene:rep__0": 0.0171975,
+"scene:pep__0": 0.0189985,
+"scene:ccp__0": 0.017334,
+"scene:ccp__1": 0.0041855,
+"scene:bv__0": 0.0093415,
+"scene:imb__0": 0.018743,
+"scene:a3__0": 0.0098445,
+"scene:mistakes__0": 0.010302,
+"scene:quiz__0": 0.0094305,
+"scene:recap__0": 0.0129825
+}

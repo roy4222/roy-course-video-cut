@@ -1,0 +1,23 @@
+{
+ "num": 19,
+ "title": "模型複雜度與剪枝：REP、PEP、CCP",
+ "head": "",
+ "summary": "樹長得越大，訓練誤差越小，卻不一定越好。這一集用「修剪盆栽」打比方，從 Occam 剃刀、複雜度懲罰（α＝0、0.5、1）、統計上界，一路講到預剪枝與後剪枝，逐步手算講義上的 REP、PEP、CCP 例題，最後補上偏誤–變異、類別不平衡與 SMOTE，並對照作業三的 max_depth、min_samples_leaf、ccp_alpha。",
+ "tags": [
+  "機器學習",
+  "決策樹",
+  "剪枝",
+  "pruning",
+  "CCP",
+  "ccp_alpha",
+  "REP",
+  "PEP",
+  "Occam 剃刀",
+  "SMOTE",
+  "類別不平衡",
+  "機器學習從零開始",
+  "作業三"
+ ],
+ "next": "EP20 作業三實戰",
+ "accent": "A"
+}

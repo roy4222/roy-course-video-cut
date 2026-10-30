@@ -1,0 +1,7 @@
+# ml-video-kit Python dependencies (Python 3.11 recommended; 3.10-3.13 work)
+faster-whisper>=1.1,<2        # Whisper alignment of TTS audio + QC sync check
+ctranslate2>=4.4,<5
+av>=12,<19                    # av 19 dropped an option faster-whisper 1.2 passes (TypeError: metadata_errors)
+numpy>=1.26
+soundfile>=0.12
+opencc-python-reimplemented>=0.1.7   # simplified -> traditional for Whisper output

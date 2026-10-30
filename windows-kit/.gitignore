@@ -1,0 +1,11 @@
+.env
+.venv/
+node_modules/
+__pycache__/
+episodes/*/out/
+episodes/*/film/
+episodes/*/qc/
+episodes/*/.kit/
+episodes/*/*.mp4
+episodes/*/pipe.log
+assets/fonts/NotoSansCJK*.woff2

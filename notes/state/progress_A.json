@@ -1,0 +1,199 @@
+{
+ "00": {
+  "script": {
+   "lines": 73,
+   "chars": 2227
+  },
+  "updated": "2026-10-30 10:16",
+  "tts": {
+   "cost": 0.1515,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 607.3
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.2",
+   "duration": 607.3,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.89
+  },
+  "yt": true,
+  "drive": {
+   "folder": "<drive-link-redacted>",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>"
+  }
+ },
+ "02": {
+  "script": {
+   "lines": 91,
+   "chars": 3128
+  },
+  "updated": "2026-10-30 11:42",
+  "tts": {
+   "cost": 0.2403,
+   "missing_cost": 0
+  },
+  "timeline": {
+   "dur": 894.67
+  },
+  "drive": {
+   "folder": "1s_E6o6ozjl6eRzrpwUgcg-y7am-G5EKv",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.1",
+   "duration": 894.67,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.93
+  },
+  "yt": true
+ },
+ "03": {
+  "script": {
+   "lines": 81,
+   "chars": 2656
+  },
+  "updated": "2026-10-30 12:02",
+  "tts": {
+   "cost": 0.1496,
+   "missing_cost": 1
+  },
+  "drive": {
+   "folder": "10HdX_pgWKGOss-I4vKEHRzTja90uP-yY",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 12:50"
+  },
+  "timeline": {
+   "dur": 732.9
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-13.9",
+   "peak": "-0.9",
+   "duration": 732.9,
+   "warn": true
+  },
+  "qc": {
+   "sync_min": 0.89
+  },
+  "yt": true
+ },
+ "04": {
+  "script": {
+   "lines": 72,
+   "chars": 2407
+  },
+  "updated": "2026-10-30 12:35",
+  "tts": {
+   "cost": 0.1444,
+   "missing_cost": 0
+  },
+  "drive": {
+   "folder": "1GxOa9pHj6UjXSL1DvgJU2JAxZ1HSVR-u",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 12:50"
+  },
+  "timeline": {
+   "dur": 666.78
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.2",
+   "duration": 666.77,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.96
+  },
+  "yt": true
+ },
+ "05": {
+  "script": {
+   "lines": 74,
+   "chars": 2432
+  },
+  "updated": "2026-10-30 12:54",
+  "tts": {
+   "cost": 0.2053,
+   "missing_cost": 0
+  },
+  "drive": {
+   "folder": "1gBT8hnva339P1Wlo5Qb9dgTrz3sUPyvR",
+   "mp4": "<drive-link-redacted>",
+   "srt": "<drive-link-redacted>",
+   "done": true,
+   "by": "watchdog 13:15"
+  },
+  "timeline": {
+   "dur": 716.28
+  },
+  "render": true,
+  "mux": {
+   "lufs": "-14.0",
+   "peak": "-1.2",
+   "duration": 716.27,
+   "warn": false
+  },
+  "qc": {
+   "sync_min": 0.94
+  },
+  "yt": true
+ },
+ "06": {
+  "script": {
+   "lines": 71,
+   "chars": 2528
+  },
+  "updated": "2026-10-30 10:18",
+  "handoff": "10:18 交接給新 worker：src.py／script.json／script.md 已完成（另有 FAKE 預估時長的 cues.json、film/ 預覽，需重跑 timeline）；尚未做 TTS／render。本 worker 不再動此資料夾。"
+ },
+ "07": {
+  "script": {
+   "lines": 81,
+   "chars": 3112
+  },
+  "updated": "2026-10-30 10:18",
+  "handoff": "10:18 交接給新 worker：src.py／script.json／script.md 已完成（另有 FAKE 預估時長的 cues.json、film/ 預覽，需重跑 timeline）；尚未做 TTS／render。本 worker 不再動此資料夾。"
+ },
+ "08": {
+  "script": {
+   "lines": 68,
+   "chars": 2449
+  },
+  "updated": "2026-10-30 10:18",
+  "handoff": "10:18 交接給新 worker：src.py／script.json／script.md 已完成（另有 FAKE 預估時長的 cues.json、film/ 預覽，需重跑 timeline）；尚未做 TTS／render。本 worker 不再動此資料夾。"
+ },
+ "09": {
+  "script": {
+   "lines": 83,
+   "chars": 3470
+  },
+  "updated": "2026-10-30 10:18",
+  "handoff": "10:18 交接給新 worker：src.py／script.json／script.md 已完成（另有 FAKE 預估時長的 cues.json、film/ 預覽，需重跑 timeline）；尚未做 TTS／render。本 worker 不再動此資料夾。"
+ },
+ "10": {
+  "script": {
+   "lines": 69,
+   "chars": 2333
+  },
+  "updated": "2026-10-30 10:18",
+  "handoff": "10:18 交接給新 worker：src.py／script.json／script.md 已完成（另有 FAKE 預估時長的 cues.json、film/ 預覽，需重跑 timeline）；尚未做 TTS／render。本 worker 不再動此資料夾。"
+ }
+}

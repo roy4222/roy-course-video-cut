@@ -1,0 +1,55 @@
+# secrets — never commit
+.env
+**/.env
+!.env.example
+!**/.env.example
+
+# python / node
+.venv/
+venv/
+**/__pycache__/
+*.pyc
+*.pyo
+node_modules/
+**/node_modules/
+
+# browsers, models, caches
+.browsers/
+**/.browsers/
+.cache/
+**/.cache/
+**/.kit/
+
+# media and renders (episode text, json, srt stay)
+*.mp4
+*.wav
+*.mp3
+*.webm
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mov
+episodes/*/film/
+episodes/*/out/
+episodes/*/voice/*.wav
+episodes/*/voice/scenes/
+episodes/*/qc/*.jpg
+windows-kit/episodes/*/out/
+windows-kit/episodes/*/film/
+windows-kit/episodes/*/qc/
+
+# Noto CJK is fetched locally (about 23 MB). Do not commit the binaries.
+# DejaVu Sans Mono woff2 files in the same folder are small and stay in git.
+windows-kit/assets/fonts/NotoSansCJK*.woff2
+
+# lemo-opuscar checkout (scripts/fetch_lemo_opuscar.sh). Not vendored.
+third_party/
+
+# logs and scratch
+*.log
+*.bak
+*.bak_watchdog*
+*.tmp
+.DS_Store
+Thumbs.db

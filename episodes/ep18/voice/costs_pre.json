@@ -1,0 +1,17 @@
+{
+"scene:hook__0": 0.010807,
+"scene:bias__0": 0.0107645,
+"scene:holdout__0": 0.0127455,
+"scene:kfold__0": 0.01905,
+"scene:repstrat__0": 0.013993,
+"scene:cvsel__0": 0.0180475,
+"scene:notenough__0": 0.0162765,
+"scene:nested__0": 0.0166995,
+"scene:final__0": 0.013249,
+"scene:kaggle__0": 0.0180655,
+"scene:roc__0": 0.0202205,
+"scene:a3__0": 0.0193525,
+"scene:mistakes__0": 0.0122025,
+"scene:quiz__0": 0.011013,
+"scene:recap__0": 0.013906
+}

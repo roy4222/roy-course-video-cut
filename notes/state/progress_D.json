@@ -1,0 +1,51 @@
+{
+ "EP18": {
+  "duration_s": 1069.4,
+  "updated": "2026-10-30 11:54",
+  "last_step": "yt",
+  "tts_cost": 0.2537,
+  "tts": "done",
+  "lufs": -14.1,
+  "true_peak": -1.2,
+  "status": "done",
+  "drive_folder": "<drive-link-redacted>",
+  "drive_mp4": "<drive-link-redacted>",
+  "drive_srt": "<drive-link-redacted>",
+  "qc": "8 frames ok; sync offsets +0.12/-0.20/+0.14s; 1080p30; -14.1 LUFS TP -1.2",
+  "sheet": "not updated (no Sheets connector)"
+ },
+ "EP19": {
+  "duration_s": 1191.67,
+  "updated": "2026-10-30 15:51",
+  "last_step": "done",
+  "tts_cost": 0.3051,
+  "tts": "done",
+  "render": "done",
+  "drive_mp4": "<drive-link-redacted>",
+  "drive_srt": "<drive-link-redacted>",
+  "drive_folder": "<drive-link-redacted>",
+  "status": "done",
+  "machine": "desktop",
+  "uploaded": true,
+  "lufs": -13.8,
+  "true_peak": -1.5,
+  "desktop_min": 15.4,
+  "qc": "1080p30; -13.8 LUFS TP -1.5; energy onset +0.08..+0.13s; whisper sim 0.95/0.87/0.67(numerals)"
+ },
+ "EP20": {
+  "duration_s": 1107.18,
+  "updated": "2026-10-30 14:50",
+  "last_step": "yt",
+  "tts_cost": 0.2432,
+  "tts": "done",
+  "lufs": -14.0,
+  "true_peak": -1.6,
+  "drive_folder": "<drive-link-redacted>",
+  "drive_mp4": "<drive-link-redacted>",
+  "drive_srt": "<drive-link-redacted>",
+  "uploaded": true,
+  "uploaded_by": "watchdog 15:20",
+  "machine": "box",
+  "status": "done"
+ }
+}

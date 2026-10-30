@@ -1,0 +1,19 @@
+{
+ "num": 15,
+ "title": "怎麼挑最好的切法：Gini、Entropy、資訊增益、Gain Ratio",
+ "head": "",
+ "summary": "決策樹每一步要問哪個問題？這一集用珍奶的「混不混」來理解不純度，手算 Entropy、Gini、分類錯誤率，學會子節點加權平均與增益 Δ，算出 Home Owner、Marital Status、年收入最佳切點 97，最後用 Gain Ratio 解決「ID 陷阱」，並對照作業二的要求。",
+ "tags": [
+  "機器學習",
+  "決策樹",
+  "Gini",
+  "Entropy",
+  "資訊增益",
+  "Information Gain",
+  "Gain Ratio",
+  "作業二",
+  "機器學習從零開始"
+ ],
+ "next": "EP16 決策樹全貌",
+ "accent": "A"
+}

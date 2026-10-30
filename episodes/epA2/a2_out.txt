@@ -1,0 +1,207 @@
+
+===== customer data | gini =====
+[root] n=20 counts=(10, 10) IDs=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  Gender          multi     kids=[(6, 4), (4, 6)] I(children)=0.4800 delta=0.0200 SplitInfo=1.0000 score=0.0200
+  CarType         multi     kids=[(1, 3), (8, 0), (1, 7)] I(children)=0.1625 delta=0.3375 SplitInfo=1.5219 score=0.3375
+  ShirtSize       multi     kids=[(3, 2), (3, 4), (2, 2), (2, 2)] I(children)=0.4914 delta=0.0086 SplitInfo=1.9589 score=0.0086
+  => SPLIT on CarType (gini = 0.3375)
+  [root > CarType=Family] n=4 counts=(1, 3) IDs=[1, 11, 12, 13]
+    ShirtSize       multi     kids=[(1, 0), (0, 1), (0, 1), (0, 1)] I(children)=0.0000 delta=0.3750 SplitInfo=2.0000 score=0.3750
+    => SPLIT on ShirtSize (gini = 0.3750)
+    [root > CarType=Family > ShirtSize=Small] n=1 counts=(1, 0) IDs=[1]
+      -> LEAF C0 (pure)
+    [root > CarType=Family > ShirtSize=Large] n=1 counts=(0, 1) IDs=[11]
+      -> LEAF C1 (pure)
+    [root > CarType=Family > ShirtSize=Extra Large] n=1 counts=(0, 1) IDs=[12]
+      -> LEAF C1 (pure)
+    [root > CarType=Family > ShirtSize=Medium] n=1 counts=(0, 1) IDs=[13]
+      -> LEAF C1 (pure)
+  [root > CarType=Sports] n=8 counts=(8, 0) IDs=[2, 3, 4, 5, 6, 7, 8, 9]
+    -> LEAF C0 (pure)
+  [root > CarType=Luxury] n=8 counts=(1, 7) IDs=[10, 14, 15, 16, 17, 18, 19, 20]
+    Gender          multi     kids=[(1, 6), (0, 1)] I(children)=0.2143 delta=0.0045 SplitInfo=0.5436 score=0.0045
+    ShirtSize       multi     kids=[(1, 1), (0, 1), (0, 2), (0, 3)] I(children)=0.1250 delta=0.0938 SplitInfo=1.9056 score=0.0938
+    => SPLIT on ShirtSize (gini = 0.0938)
+    [root > CarType=Luxury > ShirtSize=Large] n=2 counts=(1, 1) IDs=[10, 20]
+      -> LEAF tie -> parent majority (cannot split)
+    [root > CarType=Luxury > ShirtSize=Extra Large] n=1 counts=(0, 1) IDs=[14]
+      -> LEAF C1 (pure)
+    [root > CarType=Luxury > ShirtSize=Small] n=2 counts=(0, 2) IDs=[15, 16]
+      -> LEAF C1 (pure)
+    [root > CarType=Luxury > ShirtSize=Medium] n=3 counts=(0, 3) IDs=[17, 18, 19]
+      -> LEAF C1 (pure)
+
+===== customer data | info_gain =====
+[root] n=20 counts=(10, 10) IDs=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  Gender          multi     kids=[(6, 4), (4, 6)] I(children)=0.9710 delta=0.0290 SplitInfo=1.0000 score=0.0290
+  CarType         multi     kids=[(1, 3), (8, 0), (1, 7)] I(children)=0.3797 delta=0.6203 SplitInfo=1.5219 score=0.6203
+  ShirtSize       multi     kids=[(3, 2), (3, 4), (2, 2), (2, 2)] I(children)=0.9876 delta=0.0124 SplitInfo=1.9589 score=0.0124
+  => SPLIT on CarType (info_gain = 0.6203)
+  [root > CarType=Family] n=4 counts=(1, 3) IDs=[1, 11, 12, 13]
+    ShirtSize       multi     kids=[(1, 0), (0, 1), (0, 1), (0, 1)] I(children)=0.0000 delta=0.8113 SplitInfo=2.0000 score=0.8113
+    => SPLIT on ShirtSize (info_gain = 0.8113)
+    [root > CarType=Family > ShirtSize=Small] n=1 counts=(1, 0) IDs=[1]
+      -> LEAF C0 (pure)
+    [root > CarType=Family > ShirtSize=Large] n=1 counts=(0, 1) IDs=[11]
+      -> LEAF C1 (pure)
+    [root > CarType=Family > ShirtSize=Extra Large] n=1 counts=(0, 1) IDs=[12]
+      -> LEAF C1 (pure)
+    [root > CarType=Family > ShirtSize=Medium] n=1 counts=(0, 1) IDs=[13]
+      -> LEAF C1 (pure)
+  [root > CarType=Sports] n=8 counts=(8, 0) IDs=[2, 3, 4, 5, 6, 7, 8, 9]
+    -> LEAF C0 (pure)
+  [root > CarType=Luxury] n=8 counts=(1, 7) IDs=[10, 14, 15, 16, 17, 18, 19, 20]
+    Gender          multi     kids=[(1, 6), (0, 1)] I(children)=0.5177 delta=0.0259 SplitInfo=0.5436 score=0.0259
+    ShirtSize       multi     kids=[(1, 1), (0, 1), (0, 2), (0, 3)] I(children)=0.2500 delta=0.2936 SplitInfo=1.9056 score=0.2936
+    => SPLIT on ShirtSize (info_gain = 0.2936)
+    [root > CarType=Luxury > ShirtSize=Large] n=2 counts=(1, 1) IDs=[10, 20]
+      -> LEAF tie -> parent majority (cannot split)
+    [root > CarType=Luxury > ShirtSize=Extra Large] n=1 counts=(0, 1) IDs=[14]
+      -> LEAF C1 (pure)
+    [root > CarType=Luxury > ShirtSize=Small] n=2 counts=(0, 2) IDs=[15, 16]
+      -> LEAF C1 (pure)
+    [root > CarType=Luxury > ShirtSize=Medium] n=3 counts=(0, 3) IDs=[17, 18, 19]
+      -> LEAF C1 (pure)
+
+===== customer data | gain_ratio =====
+[root] n=20 counts=(10, 10) IDs=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  Gender          multi     kids=[(6, 4), (4, 6)] I(children)=0.9710 delta=0.0290 SplitInfo=1.0000 score=0.0290
+  CarType         multi     kids=[(1, 3), (8, 0), (1, 7)] I(children)=0.3797 delta=0.6203 SplitInfo=1.5219 score=0.4076
+  ShirtSize       multi     kids=[(3, 2), (3, 4), (2, 2), (2, 2)] I(children)=0.9876 delta=0.0124 SplitInfo=1.9589 score=0.0063
+  => SPLIT on CarType (gain_ratio = 0.4076)
+  [root > CarType=Family] n=4 counts=(1, 3) IDs=[1, 11, 12, 13]
+    ShirtSize       multi     kids=[(1, 0), (0, 1), (0, 1), (0, 1)] I(children)=0.0000 delta=0.8113 SplitInfo=2.0000 score=0.4056
+    => SPLIT on ShirtSize (gain_ratio = 0.4056)
+    [root > CarType=Family > ShirtSize=Small] n=1 counts=(1, 0) IDs=[1]
+      -> LEAF C0 (pure)
+    [root > CarType=Family > ShirtSize=Large] n=1 counts=(0, 1) IDs=[11]
+      -> LEAF C1 (pure)
+    [root > CarType=Family > ShirtSize=Extra Large] n=1 counts=(0, 1) IDs=[12]
+      -> LEAF C1 (pure)
+    [root > CarType=Family > ShirtSize=Medium] n=1 counts=(0, 1) IDs=[13]
+      -> LEAF C1 (pure)
+  [root > CarType=Sports] n=8 counts=(8, 0) IDs=[2, 3, 4, 5, 6, 7, 8, 9]
+    -> LEAF C0 (pure)
+  [root > CarType=Luxury] n=8 counts=(1, 7) IDs=[10, 14, 15, 16, 17, 18, 19, 20]
+    Gender          multi     kids=[(1, 6), (0, 1)] I(children)=0.5177 delta=0.0259 SplitInfo=0.5436 score=0.0476
+    ShirtSize       multi     kids=[(1, 1), (0, 1), (0, 2), (0, 3)] I(children)=0.2500 delta=0.2936 SplitInfo=1.9056 score=0.1541
+    => SPLIT on ShirtSize (gain_ratio = 0.1541)
+    [root > CarType=Luxury > ShirtSize=Large] n=2 counts=(1, 1) IDs=[10, 20]
+      -> LEAF tie -> parent majority (cannot split)
+    [root > CarType=Luxury > ShirtSize=Extra Large] n=1 counts=(0, 1) IDs=[14]
+      -> LEAF C1 (pure)
+    [root > CarType=Luxury > ShirtSize=Small] n=2 counts=(0, 2) IDs=[15, 16]
+      -> LEAF C1 (pure)
+    [root > CarType=Luxury > ShirtSize=Medium] n=3 counts=(0, 3) IDs=[17, 18, 19]
+      -> LEAF C1 (pure)
+
+===== loan data | gini =====
+[root] n=10 counts=(7, 3) IDs=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  HomeOwner       multi     kids=[(3, 0), (4, 3)] I(children)=0.3429 delta=0.0771 SplitInfo=0.8813 score=0.0771
+  Marital         multi     kids=[(2, 2), (4, 0), (1, 1)] I(children)=0.3000 delta=0.1200 SplitInfo=1.5219 score=0.1200
+  Income          <=65      kids=[(1, 0), (6, 3)] I(children)=0.4000 delta=0.0200 SplitInfo=0.4690 score=0.0200
+  Income          <=72.5    kids=[(2, 0), (5, 3)] I(children)=0.3750 delta=0.0450 SplitInfo=0.7219 score=0.0450
+  Income          <=80      kids=[(3, 0), (4, 3)] I(children)=0.3429 delta=0.0771 SplitInfo=0.8813 score=0.0771
+  Income          <=87.5    kids=[(3, 1), (4, 2)] I(children)=0.4167 delta=0.0033 SplitInfo=0.9710 score=0.0033
+  Income          <=92.5    kids=[(3, 2), (4, 1)] I(children)=0.4000 delta=0.0200 SplitInfo=1.0000 score=0.0200
+  Income          <=97.5    kids=[(3, 3), (4, 0)] I(children)=0.3000 delta=0.1200 SplitInfo=0.9710 score=0.1200
+  Income          <=110     kids=[(4, 3), (3, 0)] I(children)=0.3429 delta=0.0771 SplitInfo=0.8813 score=0.0771
+  Income          <=122.5   kids=[(5, 3), (2, 0)] I(children)=0.3750 delta=0.0450 SplitInfo=0.7219 score=0.0450
+  Income          <=172.5   kids=[(6, 3), (1, 0)] I(children)=0.4000 delta=0.0200 SplitInfo=0.4690 score=0.0200
+  => SPLIT on Marital (gini = 0.1200)
+  [root > Marital=Single] n=4 counts=(2, 2) IDs=[1, 3, 8, 10]
+    HomeOwner       multi     kids=[(1, 0), (1, 2)] I(children)=0.3333 delta=0.1667 SplitInfo=0.8113 score=0.1667
+    Income          <=77.5    kids=[(1, 0), (1, 2)] I(children)=0.3333 delta=0.1667 SplitInfo=0.8113 score=0.1667
+    Income          <=87.5    kids=[(1, 1), (1, 1)] I(children)=0.5000 delta=0.0000 SplitInfo=1.0000 score=0.0000
+    Income          <=107.5   kids=[(1, 2), (1, 0)] I(children)=0.3333 delta=0.1667 SplitInfo=0.8113 score=0.1667
+    => SPLIT on HomeOwner (gini = 0.1667)
+    [root > Marital=Single > HomeOwner=Yes] n=1 counts=(1, 0) IDs=[1]
+      -> LEAF No (pure)
+    [root > Marital=Single > HomeOwner=No] n=3 counts=(1, 2) IDs=[3, 8, 10]
+      Income          <=77.5    kids=[(1, 0), (0, 2)] I(children)=0.0000 delta=0.4444 SplitInfo=0.9183 score=0.4444
+      Income          <=87.5    kids=[(1, 1), (0, 1)] I(children)=0.3333 delta=0.1111 SplitInfo=0.9183 score=0.1111
+      => SPLIT on Income (gini = 0.4444)
+      [root > Marital=Single > HomeOwner=No > Income=<=77.5] n=1 counts=(1, 0) IDs=[3]
+        -> LEAF No (pure)
+      [root > Marital=Single > HomeOwner=No > Income=>77.5] n=2 counts=(0, 2) IDs=[8, 10]
+        -> LEAF Yes (pure)
+  [root > Marital=Married] n=4 counts=(4, 0) IDs=[2, 4, 6, 9]
+    -> LEAF No (pure)
+  [root > Marital=Divorced] n=2 counts=(1, 1) IDs=[5, 7]
+    HomeOwner       multi     kids=[(0, 1), (1, 0)] I(children)=0.0000 delta=0.5000 SplitInfo=1.0000 score=0.5000
+    Income          <=157.5   kids=[(0, 1), (1, 0)] I(children)=0.0000 delta=0.5000 SplitInfo=1.0000 score=0.5000
+    => SPLIT on HomeOwner (gini = 0.5000)
+    [root > Marital=Divorced > HomeOwner=No] n=1 counts=(0, 1) IDs=[5]
+      -> LEAF Yes (pure)
+    [root > Marital=Divorced > HomeOwner=Yes] n=1 counts=(1, 0) IDs=[7]
+      -> LEAF No (pure)
+
+===== loan data | info_gain =====
+[root] n=10 counts=(7, 3) IDs=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  HomeOwner       multi     kids=[(3, 0), (4, 3)] I(children)=0.6897 delta=0.1916 SplitInfo=0.8813 score=0.1916
+  Marital         multi     kids=[(2, 2), (4, 0), (1, 1)] I(children)=0.6000 delta=0.2813 SplitInfo=1.5219 score=0.2813
+  Income          <=65      kids=[(1, 0), (6, 3)] I(children)=0.8265 delta=0.0548 SplitInfo=0.4690 score=0.0548
+  Income          <=72.5    kids=[(2, 0), (5, 3)] I(children)=0.7635 delta=0.1177 SplitInfo=0.7219 score=0.1177
+  Income          <=80      kids=[(3, 0), (4, 3)] I(children)=0.6897 delta=0.1916 SplitInfo=0.8813 score=0.1916
+  Income          <=87.5    kids=[(3, 1), (4, 2)] I(children)=0.8755 delta=0.0058 SplitInfo=0.9710 score=0.0058
+  Income          <=92.5    kids=[(3, 2), (4, 1)] I(children)=0.8464 delta=0.0349 SplitInfo=1.0000 score=0.0349
+  Income          <=97.5    kids=[(3, 3), (4, 0)] I(children)=0.6000 delta=0.2813 SplitInfo=0.9710 score=0.2813
+  Income          <=110     kids=[(4, 3), (3, 0)] I(children)=0.6897 delta=0.1916 SplitInfo=0.8813 score=0.1916
+  Income          <=122.5   kids=[(5, 3), (2, 0)] I(children)=0.7635 delta=0.1177 SplitInfo=0.7219 score=0.1177
+  Income          <=172.5   kids=[(6, 3), (1, 0)] I(children)=0.8265 delta=0.0548 SplitInfo=0.4690 score=0.0548
+  => SPLIT on Marital (info_gain = 0.2813)
+  [root > Marital=Single] n=4 counts=(2, 2) IDs=[1, 3, 8, 10]
+    HomeOwner       multi     kids=[(1, 0), (1, 2)] I(children)=0.6887 delta=0.3113 SplitInfo=0.8113 score=0.3113
+    Income          <=77.5    kids=[(1, 0), (1, 2)] I(children)=0.6887 delta=0.3113 SplitInfo=0.8113 score=0.3113
+    Income          <=87.5    kids=[(1, 1), (1, 1)] I(children)=1.0000 delta=0.0000 SplitInfo=1.0000 score=0.0000
+    Income          <=107.5   kids=[(1, 2), (1, 0)] I(children)=0.6887 delta=0.3113 SplitInfo=0.8113 score=0.3113
+    => SPLIT on HomeOwner (info_gain = 0.3113)
+    [root > Marital=Single > HomeOwner=Yes] n=1 counts=(1, 0) IDs=[1]
+      -> LEAF No (pure)
+    [root > Marital=Single > HomeOwner=No] n=3 counts=(1, 2) IDs=[3, 8, 10]
+      Income          <=77.5    kids=[(1, 0), (0, 2)] I(children)=0.0000 delta=0.9183 SplitInfo=0.9183 score=0.9183
+      Income          <=87.5    kids=[(1, 1), (0, 1)] I(children)=0.6667 delta=0.2516 SplitInfo=0.9183 score=0.2516
+      => SPLIT on Income (info_gain = 0.9183)
+      [root > Marital=Single > HomeOwner=No > Income=<=77.5] n=1 counts=(1, 0) IDs=[3]
+        -> LEAF No (pure)
+      [root > Marital=Single > HomeOwner=No > Income=>77.5] n=2 counts=(0, 2) IDs=[8, 10]
+        -> LEAF Yes (pure)
+  [root > Marital=Married] n=4 counts=(4, 0) IDs=[2, 4, 6, 9]
+    -> LEAF No (pure)
+  [root > Marital=Divorced] n=2 counts=(1, 1) IDs=[5, 7]
+    HomeOwner       multi     kids=[(0, 1), (1, 0)] I(children)=0.0000 delta=1.0000 SplitInfo=1.0000 score=1.0000
+    Income          <=157.5   kids=[(0, 1), (1, 0)] I(children)=0.0000 delta=1.0000 SplitInfo=1.0000 score=1.0000
+    => SPLIT on HomeOwner (info_gain = 1.0000)
+    [root > Marital=Divorced > HomeOwner=No] n=1 counts=(0, 1) IDs=[5]
+      -> LEAF Yes (pure)
+    [root > Marital=Divorced > HomeOwner=Yes] n=1 counts=(1, 0) IDs=[7]
+      -> LEAF No (pure)
+
+===== loan data | gain_ratio =====
+[root] n=10 counts=(7, 3) IDs=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  HomeOwner       multi     kids=[(3, 0), (4, 3)] I(children)=0.6897 delta=0.1916 SplitInfo=0.8813 score=0.2174
+  Marital         multi     kids=[(2, 2), (4, 0), (1, 1)] I(children)=0.6000 delta=0.2813 SplitInfo=1.5219 score=0.1848
+  Income          <=65      kids=[(1, 0), (6, 3)] I(children)=0.8265 delta=0.0548 SplitInfo=0.4690 score=0.1169
+  Income          <=72.5    kids=[(2, 0), (5, 3)] I(children)=0.7635 delta=0.1177 SplitInfo=0.7219 score=0.1631
+  Income          <=80      kids=[(3, 0), (4, 3)] I(children)=0.6897 delta=0.1916 SplitInfo=0.8813 score=0.2174
+  Income          <=87.5    kids=[(3, 1), (4, 2)] I(children)=0.8755 delta=0.0058 SplitInfo=0.9710 score=0.0060
+  Income          <=92.5    kids=[(3, 2), (4, 1)] I(children)=0.8464 delta=0.0349 SplitInfo=1.0000 score=0.0349
+  Income          <=97.5    kids=[(3, 3), (4, 0)] I(children)=0.6000 delta=0.2813 SplitInfo=0.9710 score=0.2897
+  Income          <=110     kids=[(4, 3), (3, 0)] I(children)=0.6897 delta=0.1916 SplitInfo=0.8813 score=0.2174
+  Income          <=122.5   kids=[(5, 3), (2, 0)] I(children)=0.7635 delta=0.1177 SplitInfo=0.7219 score=0.1631
+  Income          <=172.5   kids=[(6, 3), (1, 0)] I(children)=0.8265 delta=0.0548 SplitInfo=0.4690 score=0.1169
+  => SPLIT on Income (gain_ratio = 0.2897)
+  [root > Income=<=97.5] n=6 counts=(3, 3) IDs=[3, 5, 6, 8, 9, 10]
+    Marital         multi     kids=[(1, 2), (0, 1), (2, 0)] I(children)=0.4591 delta=0.5409 SplitInfo=1.4591 score=0.3707
+    Income          <=65      kids=[(1, 0), (2, 3)] I(children)=0.8091 delta=0.1909 SplitInfo=0.6500 score=0.2936
+    Income          <=72.5    kids=[(2, 0), (1, 3)] I(children)=0.5409 delta=0.4591 SplitInfo=0.9183 score=0.5000
+    Income          <=80      kids=[(3, 0), (0, 3)] I(children)=0.0000 delta=1.0000 SplitInfo=1.0000 score=1.0000
+    Income          <=87.5    kids=[(3, 1), (0, 2)] I(children)=0.5409 delta=0.4591 SplitInfo=0.9183 score=0.5000
+    Income          <=92.5    kids=[(3, 2), (0, 1)] I(children)=0.8091 delta=0.1909 SplitInfo=0.6500 score=0.2936
+    => SPLIT on Income (gain_ratio = 1.0000)
+    [root > Income=<=97.5 > Income=<=80] n=3 counts=(3, 0) IDs=[3, 6, 9]
+      -> LEAF No (pure)
+    [root > Income=<=97.5 > Income=>80] n=3 counts=(0, 3) IDs=[5, 8, 10]
+      -> LEAF Yes (pure)
+  [root > Income=>97.5] n=4 counts=(4, 0) IDs=[1, 2, 4, 7]
+    -> LEAF No (pure)

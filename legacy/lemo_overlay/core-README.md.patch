@@ -1,0 +1,15 @@
+diff --git a/core/README.md b/core/README.md
+index c3ef6cc..9a62d69 100644
+--- a/core/README.md
++++ b/core/README.md
+@@ -87,3 +87,10 @@ All four page tools take `--size WxH` (default `1920x1080`, even numbers) and `-
+ | `tts.py`, `srt.py` | done | bad input, missing model, path too long | usage |
+ | `tts_zh.py` | done | bad input | network unreachable |
+ | `asr_check.py` | all lines pass | mismatches | model failed to load |
++
++## Project voice default (ML 補習影片)
++
++Default narration voice for this project is OpenRouter `google/gemini-3.8-flash-tts`, voice `Enceladus`
++(warm Taiwan-Mandarin teacher instructions), via `core/tts/tts_openrouter.py` (same out_dir contract as
++`tts_zh.py`: `<id>.wav`, `dur.json`). Needs `OPENROUTER_API_KEY` in the environment. Fallback:
++`tts_zh.py --voice zh-TW-HsiaoChenNeural`. See /workspace/video_style/VOICE.md.

@@ -1,0 +1,54 @@
+shape [891, 15]
+na {'age': 177, 'embarked': 2, 'deck': 688, 'embark_town': 2}
+surv_rate 0.3838
+by_sex {'female': 0.742, 'male': 0.1889}
+by_class {'1': 0.6296, '2': 0.4728, '3': 0.2424}
+by_age {'(0, 12]': 0.5797, '(12, 18]': 0.4286, '(18, 40]': 0.3882, '(40, 60]': 0.3906, '(60, 100]': 0.2273}
+alive_eq True
+split [712, 179]
+prep {'age_med': {'female-1': 33.0, 'female-2': 28.0, 'female-3': 22.0, 'male-1': 38.5, 'male-2': 30.0, 'male-3': 25.0}, 'emb_mode': 'S'}
+after_cols ['pclass', 'sex_male', 'age', 'family', 'alone', 'fare_log', 'emb_C', 'emb_Q', 'emb_S']
+baseline_acc 0.6145
+repeat {1: {'best': '5|5', 'cv': 0.1924, 'test_acc': 0.838, 'auc': 0.8395}, 10: {'best': '3|5', 'cv': 0.1882, 'test_acc': 0.8268, 'auc': 0.8504}, 100: {'best': '3|5', 'cv': 0.2008, 'test_acc': 0.8045, 'auc': 0.8742}}
+== before best_hh 3|1 best_cv 3|1
+ hh 3|1 {'val': [0.2517, 0.2937, 0.3147], 'val_mean': 0.2867, 'train_mean': 0.256}
+ hh 3|5 {'val': [0.2517, 0.3007, 0.3147], 'val_mean': 0.289, 'train_mean': 0.2577}
+ hh 3|20 {'val': [0.2797, 0.2937, 0.3147], 'val_mean': 0.296, 'train_mean': 0.2724}
+ hh 5|1 {'val': [0.3077, 0.3147, 0.2867], 'val_mean': 0.303, 'train_mean': 0.2226}
+ hh 5|5 {'val': [0.2937, 0.3217, 0.2867], 'val_mean': 0.3007, 'train_mean': 0.2337}
+ hh 5|20 {'val': [0.2867, 0.3217, 0.3007], 'val_mean': 0.303, 'train_mean': 0.2542}
+ hh None|1 {'val': [0.3706, 0.3566, 0.3427], 'val_mean': 0.3566, 'train_mean': 0.0375}
+ hh None|5 {'val': [0.3706, 0.3287, 0.3357], 'val_mean': 0.345, 'train_mean': 0.181}
+ hh None|20 {'val': [0.2867, 0.3217, 0.2797], 'val_mean': 0.296, 'train_mean': 0.2507}
+ cv 3|1 {'val': [0.2647, 0.2532, 0.3038], 'val_mean': 0.2739, 'train_mean': 0.2633}
+ cv 3|5 {'val': [0.2647, 0.2532, 0.3038], 'val_mean': 0.2739, 'train_mean': 0.2647}
+ cv 3|20 {'val': [0.2689, 0.2869, 0.3249], 'val_mean': 0.2936, 'train_mean': 0.2746}
+ cv 5|1 {'val': [0.2941, 0.3038, 0.3376], 'val_mean': 0.3118, 'train_mean': 0.2219}
+ cv 5|5 {'val': [0.2983, 0.2869, 0.3333], 'val_mean': 0.3062, 'train_mean': 0.2339}
+ cv 5|20 {'val': [0.2815, 0.2743, 0.3376], 'val_mean': 0.2978, 'train_mean': 0.2661}
+ cv None|1 {'val': [0.3487, 0.3376, 0.3418], 'val_mean': 0.3427, 'train_mean': 0.0309}
+ cv None|5 {'val': [0.3445, 0.2785, 0.346], 'val_mean': 0.323, 'train_mean': 0.1812}
+ cv None|20 {'val': [0.2815, 0.2743, 0.3333], 'val_mean': 0.2964, 'train_mean': 0.2626}
+final_hh {'train_err': 0.2697, 'test_err': 0.2905, 'acc': 0.7095, 'sens': 0.4058, 'spec': 0.9, 'auc': 0.7273, 'cm': [28, 41, 11, 99], 'leaves': 8, 'depth': 3}
+final_cv {'train_err': 0.2697, 'test_err': 0.2905, 'acc': 0.7095, 'sens': 0.4058, 'spec': 0.9, 'auc': 0.7273, 'cm': [28, 41, 11, 99], 'leaves': 8, 'depth': 3}
+== after best_hh None|5 best_cv 5|5
+ hh 3|1 {'val': [0.1958, 0.2308, 0.2028], 'val_mean': 0.2098, 'train_mean': 0.174}
+ hh 3|5 {'val': [0.1958, 0.2308, 0.2028], 'val_mean': 0.2098, 'train_mean': 0.174}
+ hh 3|20 {'val': [0.2098, 0.2448, 0.2028], 'val_mean': 0.2191, 'train_mean': 0.1787}
+ hh 5|1 {'val': [0.2587, 0.2168, 0.2308], 'val_mean': 0.2354, 'train_mean': 0.1347}
+ hh 5|5 {'val': [0.2168, 0.2168, 0.2168], 'val_mean': 0.2168, 'train_mean': 0.1435}
+ hh 5|20 {'val': [0.2028, 0.2308, 0.2028], 'val_mean': 0.2121, 'train_mean': 0.1746}
+ hh None|1 {'val': [0.2657, 0.2308, 0.2378], 'val_mean': 0.2448, 'train_mean': 0.0164}
+ hh None|5 {'val': [0.2028, 0.2028, 0.1958], 'val_mean': 0.2005, 'train_mean': 0.1195}
+ hh None|20 {'val': [0.2028, 0.2308, 0.2028], 'val_mean': 0.2121, 'train_mean': 0.1746}
+ cv 3|1 {'val': [0.1807, 0.1814, 0.2278], 'val_mean': 0.1966, 'train_mean': 0.1671}
+ cv 3|5 {'val': [0.1807, 0.1772, 0.2236], 'val_mean': 0.1938, 'train_mean': 0.1678}
+ cv 3|20 {'val': [0.1975, 0.1983, 0.2152], 'val_mean': 0.2037, 'train_mean': 0.1847}
+ cv 5|1 {'val': [0.2017, 0.1772, 0.2236], 'val_mean': 0.2008, 'train_mean': 0.1391}
+ cv 5|5 {'val': [0.1807, 0.1772, 0.2194], 'val_mean': 0.1924, 'train_mean': 0.1503}
+ cv 5|20 {'val': [0.1975, 0.2025, 0.2194], 'val_mean': 0.2065, 'train_mean': 0.1805}
+ cv None|1 {'val': [0.2059, 0.2236, 0.2068], 'val_mean': 0.2121, 'train_mean': 0.0147}
+ cv None|5 {'val': [0.1765, 0.1772, 0.2321], 'val_mean': 0.1953, 'train_mean': 0.1264}
+ cv None|20 {'val': [0.1975, 0.2025, 0.2194], 'val_mean': 0.2065, 'train_mean': 0.1805}
+final_hh {'train_err': 0.1278, 'test_err': 0.162, 'acc': 0.838, 'sens': 0.7536, 'spec': 0.8909, 'auc': 0.8525, 'cm': [52, 17, 12, 98], 'leaves': 74, 'depth': 15}
+final_cv {'train_err': 0.1475, 'test_err': 0.162, 'acc': 0.838, 'sens': 0.6957, 'spec': 0.9273, 'auc': 0.8395, 'cm': [48, 21, 8, 102], 'leaves': 26, 'depth': 5}

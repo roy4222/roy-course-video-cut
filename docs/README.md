@@ -11,4 +11,6 @@
 | [渲染與品質檢查](rendering-qc.md) | Chromium、ffmpeg、響度、QC 清單 |
 | [上傳與播放清單](upload-playlist.md) | 私人上傳、Mac 上的腳本、播放清單要手動排 |
 | [lemo-opuscar](lemo-opuscar.md) | 釘選的 commit、怎麼下載、授權 |
-| [之後可以做的](roadmap.md) | 這一季還沒做的集，以及把別的課也做成影片 |
+| [之後可以做的](roadmap.md) | v1 這一季還沒做的集。系統與軟體安全的下一版在 [`pipeline/v2/ROADMAP.md`](../pipeline/v2/ROADMAP.md) |
+| [v2 產線](../pipeline/v2/README.md) | 系統與軟體安全：腳本、配音、錄屏、對齊、算圖、QC |
+| [課程連結](../COURSES.md) | 播放清單、計畫頁、Drive、已上傳的 26 支 |

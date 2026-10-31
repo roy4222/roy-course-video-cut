@@ -1,4 +1,66 @@
-# 機器學習從零開始：補習影片產線
+# 課程影片產線
+
+這個倉庫有兩套產線。2026-10-30 的機器學習補習班留在原地，標成 **v1**。2026-10-31 的「系統與軟體安全」是 **v2**，放在 [`pipeline/v2/`](pipeline/v2/README.md)。`legacy/` 是 v1 當天更早的實驗，留著對照。
+
+| 版本 | 課 | 從哪裡開始 |
+|---|---|---|
+| v1 | 機器學習從零開始（到 2026-10-30 共 24 支） | [`windows-kit/`](windows-kit/README.md)。下面「v1」那一節 |
+| v2 | 系統與軟體安全｜從零到白帽 | [`pipeline/v2/`](pipeline/v2/README.md)。連結在 [COURSES.md](COURSES.md) |
+
+## v2：系統與軟體安全
+
+一集從 `script.md` 和 `meta.json` 開始。配音用 OpenRouter 的 `google/gemini-3.8-flash-tts`，聲音是 **Enceladus**。金鑰只放在配音那台電腦的環境變數 `OPENROUTER_API_KEY`，不要寫進倉庫、不要印出來。
+
+畫面用兩種真的素材：隔離的 X 畫面錄下來的終端機，以及真的網頁截圖（可以緩慢平移）。字幕用 Whisper 對真實的配音逐句強迫對齊，每個 cue 最多 18 個字。
+
+渲染：桌機用 NVENC；Mac mini 和 box 用 CPU。MacBook 只做私人 YouTube 上傳。它會過熱，不要在上面跑配音、Whisper 或算圖。
+
+成片先上傳到 Drive，再從 MacBook 上傳成私人 YouTube 影片。多台機器一起做時，先在 `STATUS.md` 認領，該集目錄放了空檔 `READY` 才進渲染。協定在 [`pipeline/v2/STATUS.md`](pipeline/v2/STATUS.md)。
+
+```mermaid
+flowchart TD
+  script["script.md 與 meta.json"] --> tts["TTS：gemini-3.8-flash-tts，Enceladus"]
+  tts --> rec["隔離畫面錄屏，以及網頁截圖加平移"]
+  rec --> align["Whisper 逐句對齊，每個 cue 最多 18 字"]
+  align --> render["渲染：桌機 NVENC，Mac mini 與 box 用 CPU"]
+  render --> qc["QC 閘門"]
+  qc --> drive["上傳 Drive"]
+  drive --> yt["MacBook 私人上傳 YouTube"]
+```
+
+QC 不過就不上傳：
+
+- 同步相似度要過
+- `over18 = 0`（沒有超過 18 字的 cue）
+- 沒有缺 cue
+- 沒有倒置 cue（結束時間早於開始時間）
+- 錄屏裡沒有別人的視窗
+- 沒有黑畫面
+- 片長 10–15 分鐘
+
+2026-10-31 這輪學到的事：
+
+- 素材檔名只用 ASCII。中文檔名換機器之後會變成空畫面。
+- 錄屏開頭和結尾的黑幀要自動裁掉，否則最後一幀停住時會停在全黑。
+- 每支錄屏用自己的 X display，號碼分段，不要兩個人搶同一個畫面。
+- 對齊之後要擋掉倒置 cue。現行的修正在 `pipeline/v2/align_qc/r2_align.py`。
+- 英文字和數字加單位不要切開。現行的切法在 `pipeline/v2/align_qc/r2_align_v2.py`。
+- 重的工作不要放 MacBook。
+
+步驟、格式、機器路徑的範例、16 集審查，都在 [`pipeline/v2/`](pipeline/v2/README.md)。已上傳的 26 支連結在 [COURSES.md](COURSES.md)。
+
+### 下一版要處理的
+
+Boss 給現在這批影片大約 **60–70 分**（滿分 100）。真的網頁截圖幫助很大。完整說明在 [`pipeline/v2/ROADMAP.md`](pipeline/v2/ROADMAP.md)：
+
+- 直式手機截圖不要整張由上往下捲。依長寬比改成貼齊、放大或裁切。
+- 沒解釋的名詞要有畫面解釋。
+- 用概念插圖，不要只有文字卡。例如「被偷」就放一張小偷的圖。可以混用 [いらすとや](https://www.irasutoya.com/)，並遵守該站的使用條款。
+- 不要只有終端機畫面。可以加 3D 模型或動態圖。
+- 試 AI 生圖、生影片（例如 Grok Imagine）當 B-roll。
+- 剪輯往專業 YouTube 製作流程靠。
+
+## v1：機器學習從零開始
 
 這是一套把「一集腳本」做成 YouTube 影片的工具。對象是完全沒學過機器學習的人。旁白是台灣華語的合成語音，畫面是暗色的架構圖，字幕燒在畫面上。
 
@@ -35,8 +97,11 @@ flowchart TD
 
 | 位置 | 你會不會常改 |
 |---|---|
-| `windows-kit/` | 會。這是做片的程式：安裝、TTS、畫面、ffmpeg |
-| `episodes/` | 會。每一集的 `build.py` 和已經生成的文字（沒有 mp4／wav） |
+| `windows-kit/` | 會。v1 的做片程式。v2 算圖時也呼叫它 |
+| `pipeline/v2/` | 會。系統與軟體安全這一季：對齊、錄屏、QC |
+| `pipeline/v1/` | 不會。只是指標，程式仍在 `windows-kit/` |
+| `episodes/` | 會。v1 每一集的 `build.py` 和已經生成的文字（沒有 mp4／wav） |
+| `COURSES.md` | 系統與軟體安全的播放清單、計畫頁、Drive、已上傳的 26 支 |
 | `docs/` | 加了新效果或新步驟時，把說明補上 |
 | `scripts/` | 下載字型、下載 lemo-opuscar |
 | `upload/` | 上傳用的標題、說明、小腳本 |
@@ -196,4 +261,4 @@ EP00–EP10 是較早的 `src.py`，這套畫面引擎讀不了。要改那些�
 
 ## 維護
 
-改程式、加效果、送出之前看 [CONTRIBUTING.md](CONTRIBUTING.md)。版本紀錄在 [CHANGELOG.md](CHANGELOG.md)。下一季可能做的集數在 [docs/roadmap.md](docs/roadmap.md)。
+改程式、加效果、送出之前看 [CONTRIBUTING.md](CONTRIBUTING.md)。版本紀錄在 [CHANGELOG.md](CHANGELOG.md)。v1 下一季可能做的集數在 [docs/roadmap.md](docs/roadmap.md)。v2 下一版要處理的意見在 [pipeline/v2/ROADMAP.md](pipeline/v2/ROADMAP.md)。

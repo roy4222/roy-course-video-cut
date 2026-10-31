@@ -1,8 +1,10 @@
 # 產線架構
 
+這一頁是 **v1**（機器學習從零開始）。**v2**（系統與軟體安全）在 [`pipeline/v2/`](../pipeline/v2/README.md)，算圖時仍呼叫下面這套 `windows-kit`。
+
 這套工具把一集「機器學習從零開始」從腳本做到可以上傳的成片。成片是 **1920×1080、每秒 30 張、字幕燒在畫面上、響度大約 −14 LUFS**。旁白是合成語音，`youtube.json` 會標 `synthetic: true`。
 
-現在要跑的入口是 `windows-kit/make_episode.py`。2026-10-30 用過的另外四套工具在 `legacy/`，對照用，見 [legacy/README.md](../legacy/README.md)。
+v1 的入口是 `windows-kit/make_episode.py`。2026-10-30 用過的另外四套工具在 `legacy/`，對照用，見 [legacy/README.md](../legacy/README.md)。
 
 ## 一步一步
 
@@ -56,11 +58,12 @@ flowchart TD
 ## 目錄
 
 ```
-windows-kit/          現在的主路徑（安裝、做片、畫面引擎都在這）
+windows-kit/          v1 的主路徑（安裝、做片、畫面引擎都在這。v2 算圖也呼叫它）
   kit/                Python：Ep、TTS、切句、數字念法
   render/             由 lemo-opuscar 改來的截圖與編碼（附 MIT 授權）
   engine/engine.js    暗色架構圖的畫面元素
   episodes/sample     約 40 秒的煙霧測試腳本
+pipeline/v2/          系統與軟體安全這一季的腳本、對齊、錄屏、QC
 episodes/             EP00–EP20、epA1、epA2 的腳本與小的文字產物（沒有影音）
 upload/               YouTube 標題、說明、上傳小工具
 coverage/             講義頁面有沒有被某一集講到（不含講義本身）

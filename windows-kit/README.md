@@ -1,6 +1,6 @@
 # ml-video-kit：機器學習補習影片產線（可攜版）
 
-> 這是整個倉庫裡現在做片要用的主路徑。舊的實驗管線在倉庫的 `legacy/`，只留作對照。繁中 Noto 字型沒有放進 git，請先跑倉庫根目錄的 `scripts/fetch_fonts.ps1`（或 `scripts/fetch_fonts.sh`）。
+> 這是 **v1** 產線（機器學習從零開始），也是 v2 算圖時呼叫的畫面引擎。程式留在這個資料夾，沒有搬進 `pipeline/v1/`。2026-10-30 更早的實驗在倉庫的 `legacy/`。系統與軟體安全的流程在 [`pipeline/v2/`](../pipeline/v2/README.md)。繁中 Noto 字型沒有放進 git，請先跑倉庫根目錄的 `scripts/fetch_fonts.ps1`（或 `scripts/fetch_fonts.sh`）。
 
 把「腳本＋畫面描述」（一個集數資料夾）一路做成 **1080p30、燒錄繁中字幕、−14 LUFS** 的成片、`.srt` 字幕檔與 YouTube 上架資訊。
 

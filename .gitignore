@@ -3,6 +3,12 @@
 **/.env
 !.env.example
 !**/.env.example
+pipeline/v2/config.env
+
+# v2 working files (scripts stay; inbox and scratch do not)
+pipeline/v2/align_qc/in/
+pipeline/v2/align_qc/*.out
+pipeline/v2/align_qc/qcq.list
 
 # python / node
 .venv/
